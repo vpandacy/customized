@@ -15,7 +15,6 @@ use Yii;
 
 class DataController extends BaseController
 {
-    public $layout = false;
 
     //首页
     public function actionIndex()
@@ -59,18 +58,6 @@ class DataController extends BaseController
         ]);
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
     //产品中心
     public function actionProducts(){
         $type = intval($this->get('type',1));
@@ -85,6 +72,7 @@ class DataController extends BaseController
                 'type' => Yii::$app->params['product_type']
             ]);
     }
+
 
 
     //行业动态

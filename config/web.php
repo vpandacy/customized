@@ -106,6 +106,7 @@ $config = [
         ],
         'frontend' => [
             'class' => 'app\modules\frontend\Frontend',
+            'layout' => '@app/modules/frontend/views/layouts/main.php',
         ],
         'wap' => [
             'class' => 'app\modules\wap\WapModule',
