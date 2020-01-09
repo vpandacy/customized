@@ -6,6 +6,7 @@ return [
     'username' => 'www',
     'password' => 'mqQ7sJ7CSLZztTaY',
     'charset' => 'utf8mb4',
+
     // Schema cache options (for production environment)
     //'enableSchemaCache' => true,
     //'schemaCacheDuration' => 60,

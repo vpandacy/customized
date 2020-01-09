@@ -1,14 +1,8 @@
 <?php
 
-use app\models\News;
-use yii\helpers\ArrayHelper;
 use yii\helpers\Html;
-use yii\helpers\Url;
 use yii\widgets\ActiveForm;
 
-/* @var $this yii\web\View */
-/* @var $model app\models\News */
-/* @var $form yii\widgets\ActiveForm */
 ?>
 
 
@@ -18,8 +12,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'title')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'image')->widget('manks\FileInput', []);
-    ?>
+    <?= $form->field($model, 'image')->widget(\manks\FileInput::className(), []); ?>
 
     <?= $form->field($model, 'brief')->textInput(['maxlength' => true]) ?>
 

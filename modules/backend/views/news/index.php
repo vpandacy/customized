@@ -9,14 +9,14 @@ use yii\helpers\Url;
 /* @var $searchModel app\models\NewsSearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'News';
+$this->title = '新闻管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?=Html::jsFile('/js/jquery.js')?>
 <div class="news-index">
 
     <p>
-        <?= Html::a('创建News', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('新增新闻', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
