@@ -1,0 +1,351 @@
+/* 
+* @Author: Marte
+* @Date:   2020-01-08 08:15:20
+* @Last Modified by:   Marte
+* @Last Modified time: 2020-01-08 14:41:27
+*/
+.banner{
+    width: 100%;
+    text-align: center;
+}
+.banner img{
+    width: 100%;
+}
+
+/*内容开始*/
+.main{
+    padding: 30px 0px 50px;
+}
+.main-l{
+    width: 256px;
+    background: #f4f2f2;
+}
+.main-l-hd{
+    width: 256px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    background: #970a04;
+}
+.main-l-bd ul{
+    padding-bottom: 30px;
+}
+.main-l-bd li{
+    height: 45px;
+    line-height: 45px;
+    margin-top: 20px;
+}
+.main-l-bd li a{
+    display: block;
+    background: url(../images/listL.png) no-repeat 70px center;
+    padding-left: 100px;
+    font-size: 18px;
+}
+.main-l-bd li a:hover{
+    background: #e7e7e7 url(../images/listL2.png) no-repeat 70px center;
+    color: #970a04;
+}
+.main-l-bd li.on a{
+    background: #e7e7e7 url(../images/listL2.png) no-repeat 70px center;
+    color: #970a04;
+}
+.main-l-ft{
+    width: 256px;
+}
+
+
+.main-r{
+    width: 860px;
+}
+.main-r-hd{
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #dadada;
+}
+.main-r-hd-l h3{
+    font-size: 20px;
+    color: #362920;
+    font-weight: 500;
+}
+.main-r-hd-r span{
+    font-size: 12px;
+    color: #989491;
+}
+.main-r-hd-r span a{
+    font-size: 12px;
+    color: #989491;
+}
+.main-r-bd{
+    padding-top: 28px;
+}
+.main-r-bd h6{
+    font-size: 24px;
+    color: #970a04;
+    padding-bottom: 30px;
+}
+.main-r-bd p{
+    font-size: 16px;
+    line-height: 36px;
+    color: #444;
+}
+.red{
+    color: #970a04;
+}
+
+
+/*企业文化*/
+.culture-txt{
+    width: 49%;
+    display: inline-block;
+    margin-top: 30px;
+}
+.culture-txt h5{
+    font-size: 26px;
+    color: #970a04;
+    display: inline-block;
+    margin-right: 6px;
+}
+.culture-txt span{
+    font-size: 16px;
+    color: #333;
+    display: inline-block;
+}
+.culture-txt2{
+    width: 100%;
+}
+
+/*分页开始*/
+.fenye{
+    margin-top: 50px;
+    text-align: center;
+}
+.fenye ul{
+    display: inline-block;
+}
+.fenye li{
+    float: left;
+    margin-right: 20px;
+}
+.fenye li a{
+    float: left;
+    padding: 4px 10px;
+    border: 1px solid #bfbfbf;
+    color: #bfbfbf;
+}
+.fenye li a:hover{
+    background: #970a04;
+    color: #fff;
+    border: 1px solid #970a04;
+}
+.fenye li.on a{
+    background: #970a04;
+    color: #fff;
+    border: 1px solid #970a04;
+}
+/*分页结束*/
+
+
+
+.bigImage{
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+.trendRft{
+    width: 100%;
+    margin-top: 20px;
+}
+
+
+
+/*集成墙板*/
+.product-ul li{
+    float: left;
+    transition: all 0.6s;
+    margin-bottom: 10px;
+}
+.product-ul li a{
+    float: left;
+    width: 280px;
+    height: 360px;
+    border: 1px solid #eee;
+    overflow: hidden;
+}
+.product-ul li a img{
+    width: 100%;
+    height: 283px;
+    display: block;
+    transition: all 0.6s;
+}
+.product-txt{
+    padding: 30px 20px 0;
+}
+.product-txt-l{
+    font-size: 18px;
+    color: #404040;
+}
+.product-txt-r{
+    width: 25px;
+    height: 25px;
+    background: url(../images/allowBd.png) no-repeat;
+}
+.product-ul li:hover{
+    background: #970a04;
+}
+.product-ul li:hover span{
+    color: #fff;
+}
+.product-ul li:hover .product-txt-r{
+    background: url(../images/allowBd2.png) no-repeat;
+}
+.product-ul li:hover img{
+    transform: scale(1.1);
+}
+.product-ul .jiange{
+    margin: 0 7px;
+}
+
+/*品牌新闻*/
+
+.news-list-ul li{
+    margin-bottom: 20px;
+}
+.news-list{
+    display: block;
+    background: #f9f9f9;
+    padding: 20px 10px;
+    transition: all 0.6s;
+}
+.news-list-l{
+    transition: all 0.6s;
+}
+.news-list-l:hover{
+    transform: scale(1.1);
+}
+.news-list-r{
+    width: 670px;
+    display: block;
+}
+.news-list-r h6{
+    color: #525252;
+    font-size: 20px;
+    padding-bottom: 10px;
+}
+.news-list-r .news-list-abstract{
+    color: #525252;
+    font-size: 16px;
+    line-height: 30px;
+    display: block;
+    height: 60px;
+    overflow: hidden;
+}
+.news-list-r .news-list-abstract p{
+    line-height: 30px;
+}
+.news-list-r .news-list-date{
+    color: #525252;
+    font-size: 12px;
+}
+.news-list:hover{
+    background: #970a04;
+    color: #fff;
+}
+.news-list:hover h6,.news-list:hover .news-list-abstract p,.news-list:hover .news-list-date{
+    color: #fff;
+}
+
+/*联系我们*/
+.main-l-bd .lxwm-ul li{
+    text-align: center;
+    height: auto;
+    line-height: 30px;
+    border-bottom: 1px dashed #ddd;
+    padding-bottom: 10px;
+}
+.lxwm-ul{
+    padding: 0 10px;
+}
+.lxwm-ul-txt{
+    display: block;
+    color: #970a04;
+    font-weight: bold;
+    font-size: 18px;
+    margin-top: 8px;
+}
+.lxwm-r-title{
+    text-align: center;
+    color: #970a04;
+    font-size: 24px;
+}
+.lxwm-r-hd{
+    margin: 20px 0 30px;
+}
+.lxwm-r-item{
+    color: #404040;
+    font-size: 20px;
+}
+.lxwm-r-input{
+    color: #404040;
+    font-size: 20px;
+    width: 190px;
+    height: 36px;
+    line-height: 36px;
+    padding: 0 8px;
+    border: 1px solid #ddd;
+    margin-right: 25px;
+}
+.lxwm-r-textarea{
+    border: 1px solid #ddd;
+    width: 89%;
+    height: 230px;
+    padding: 4px 8px;
+    margin-left: 4px;
+}
+.lxwm-btn{
+    width: 100px;
+    height: 45px;
+    line-height: 45px;
+    background: #f4f2f2;
+    color: #333;
+    font-size: 16px;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+/*详情页开始*/
+.detail-hd{
+    text-align: center;
+    border-bottom: 1px solid #dadada;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+.detail-title{
+    color: #525252;
+    font-size: 20px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+.detail-date{
+    color: #404040;
+    font-size: 14px;
+}
+.main-r-bd img{
+    max-width: 100%;
+}
+.detail-button{
+    width: 100px;
+    height: 45px;
+    line-height: 45px;
+    background: #bf0007;
+    color: #fff;
+    font-size: 16px;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin-top: 20px;
+}
+/*详情页结束*/
