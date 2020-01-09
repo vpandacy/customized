@@ -2,10 +2,10 @@
 
 return [
     'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=127.0.0.1;dbname=zhonggongnanke',
-    'username' => 'root',
-    'password' => 'root',
-    'charset' => 'utf8',
+    'dsn' => 'mysql:host=47.112.117.135;dbname=customized',
+    'username' => 'www',
+    'password' => 'mqQ7sJ7CSLZztTaY',
+    'charset' => 'utf8mb4',
     // Schema cache options (for production environment)
     //'enableSchemaCache' => true,
     //'schemaCacheDuration' => 60,
