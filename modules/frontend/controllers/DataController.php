@@ -25,15 +25,23 @@ class DataController extends Controller
         $products = Products::find()
             ->where([
                 'status' => Products::STATUS_ACTIVE,
-                'type'   => 1])
+                'type' => 1
+            ])
             ->limit(20)
             ->select("*")
             ->all();
-        $news     = News::find()
+        $news = News::find()
             ->where(['status' => News::STATUS_USING])
             ->limit(5)->select("*")
             ->all();
         return $this->render('index', ['products' => $products, 'news' => $news]);
+    }
+
+    //新闻资讯
+    public function actionNews()
+    {
+        $news = News::find()
+            ->wh
     }
 
 
