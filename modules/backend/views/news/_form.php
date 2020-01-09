@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
+use kartik\date\DatePicker;
 ?>
 
 
@@ -40,7 +40,7 @@ use yii\widgets\ActiveForm;
             'autoclose' => true,
             'todayHighlight' => true,
             'format' => 'yyyy-mm-dd',
-        ]
+        ],
     ]); ?>
 
     <div class="form-group">

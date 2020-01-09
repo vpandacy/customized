@@ -94,10 +94,8 @@ class NewsController extends Controller
     {
         $model = $this->findModel($id);
         $model->scenario = 'update';
-        if ($model->load(Yii::$app->request->post())) {
-//            var_dump(Yii::$app->request->post());die;
-//            $model->write_at;die;
-            $model->write_at = Yii::$app->request->post('write_at');
+        if (Yii::$app->request->isPost) {
+            $model->load(Yii::$app->request->post());
             $model->updated_at = date('Y-m-d h:i:s');
             if ($model->save()) {
                 return $this->redirect(['view', 'id' => $model->id]);

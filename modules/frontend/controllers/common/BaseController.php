@@ -12,7 +12,7 @@ use yii\web\Controller;
 
 class BaseController extends Controller
 {
-
+    public $page_size = 4;
     public function post($key, $default = "")
     {
         return Yii::$app->request->post($key, $default);
