@@ -6,9 +6,9 @@
 if ($pages): ?>
     <?php if ($pages['previous']): ?>
         <li><a href="<?= $url ? GlobalUrlService::buildAppUrl($url,
-                ['p' => 1]) : GlobalUrlService::buildNullUrl(); ?>">首页</a></li>
+                array_merge($search_conditions,['p' => 1])) : GlobalUrlService::buildNullUrl(); ?>">首页</a></li>
         <li><a href="<?= $url ? GlobalUrlService::buildAppUrl($url,
-                ['p' => $pages['current'] - 1]) : GlobalUrlService::buildNullUrl(); ?>">上一页</a></li>
+                array_merge($search_conditions,['p' => $pages['current'] - 1])) : GlobalUrlService::buildNullUrl(); ?>">上一页</a></li>
     <?php else:?>
         <li><a href="<?=GlobalUrlService::buildNullUrl();?>">首页</a></li>
         <li><a href="<?=GlobalUrlService::buildNullUrl();?>">上一页</a></li>
@@ -18,16 +18,17 @@ if ($pages): ?>
             <li class="active"><a href="<?= GlobalUrlService::buildNullUrl(); ?>"><?= $page; ?></a></li>
         <?php else: ?>
             <li><a href="<?= GlobalUrlService::buildAppUrl($url,
-                    ['p' => $page]); ?>"><?= $page; ?></a></li>
+                    array_merge($search_conditions,['p' => $page])); ?>"><?= $page; ?></a></li>
         <?php endif; ?>
     <?php endfor; ?>
 
-
+    <!--            <li><a href="#">2</a></li>-->
+    <!--            <li><a href="#">3</a></li>-->
     <?php if ($pages['next']): ?>
         <li><a href="<?= $url ? GlobalUrlService::buildAppUrl($url,
-                ['p' => $pages['current'] + 1]) : GlobalUrlService::buildNullUrl(); ?>">下一页</a></li>
+                array_merge($search_conditions,['p' => $pages['current'] + 1])) : GlobalUrlService::buildNullUrl(); ?>">下一页</a></li>
         <li><a href="<?= $url ? GlobalUrlService::buildAppUrl($url,
-                ['p' => $pages['total_page']]) : GlobalUrlService::buildNullUrl(); ?>">末页</a></li>
+                array_merge($search_conditions,['p' => $pages['total_page']])): GlobalUrlService::buildNullUrl(); ?>">末页</a></li>
     <?php else: ?>
         <li><a href="<?=GlobalUrlService::buildNullUrl();?>">下一页</a></li>
         <li><a href="<?=GlobalUrlService::buildNullUrl();?>">末页</a></li>

@@ -38,6 +38,7 @@ class DataController extends BaseController
     public function actionNews()
     {
         $p = $this->get('p',1);
+        $source = $this->get('source',"品牌新闻");
         $query = News::find()->select("*")
             ->where(['source'=>"品牌新闻"])
             ->andWhere(['status' => News::STATUS_USING]);
@@ -73,29 +74,4 @@ class DataController extends BaseController
             ]);
     }
 
-
-
-    //行业动态
-    public function action()
-    {
-        $p = $this->get('p',1);
-        $query = News::find()->select("*")
-            ->where(['source'=>"品牌新闻"])
-            ->andWhere(['status' => News::STATUS_USING]);
-        $offset = ($p - 1) * $this->page_size;
-        $pages = UtilHelper::ipagination([
-            'total_count' => $query->count(),
-            'page_size' => $this->page_size,
-            'page' => $p,
-            'display' => 4
-        ]);
-        $list = $query->orderBy([ 'id' => SORT_DESC ])
-            ->offset($offset)
-            ->limit($this->page_size)
-            ->all();
-        return $this->render('news', [
-            'list' => $list,
-            'pages'=>$pages
-        ]);
-    }
 }

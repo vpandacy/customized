@@ -1,5 +1,6 @@
 <?php
 
+use app\components\GlobalUrlService;
 use yii\helpers\Html;
 
 ?>
@@ -167,21 +168,22 @@ use yii\helpers\Html;
             </div>
             <div class="main-r-bd">
                 <ul class="news-list-ul">
-                    <?php foreach ($list as $item)?>
+                    <?php foreach ($list as $item): ?>
                     <li>
-                        <a href="detail.html" class="news-list clearfix">
-                            <img class="news-list-l fl" src="<?= $item['image']?>" alt="" />
+                        <a href="<?= GlobalUrlService::buildAppUrl('/detail', ['id' => $item['id']]) ?>"
+                           class="news-list clearfix">
+                            <img class="news-list-l fl" src="<?= $item['image'] ?>" alt=""/>
                             <span class="news-list-r fr">
-                                <h6><?= $item['title']?></h6>
+                                <h6><?= $item['title'] ?></h6>
                                 <!-- 两行文本显示省略号 -->
                                 <span class="news-list-abstract">
-                                    <p><?= $item['brief']?></p>
+                                    <p><?= $item['brief'] ?></p>
                                 </span>
                                 <span class="news-list-date"><?= $item['write_at']?></span>
                             </span>
                         </a>
                     </li>
-
+                    <?php endforeach;?>
                 </ul>
                 <script type="text/javascript">
                     // 两行文本显示省略号
