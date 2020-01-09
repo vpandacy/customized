@@ -11,11 +11,12 @@ namespace app\modules\frontend\controllers;
 
 use app\models\News;
 use app\models\Products;
+use app\modules\frontend\controllers\common\BaseController;
 use Yii;
 use yii\data\Pagination;
 use yii\web\Controller;
 
-class DataController extends Controller
+class DataController extends BaseController
 {
     public $layout = false;
 
@@ -42,6 +43,33 @@ class DataController extends Controller
     {
         $news = News::find()
             ->wh
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //产品中心
+    public function actionProducts(){
+        $type = intval($this->get('type',1));
+        $p = intval($this->get('p',1));
+        $list = Products::find()
+            ->where(['status' => Products::STATUS_ACTIVE,'type' => $type])
+            ->asArray()
+            ->all();
+        return $this->render('products',
+            [
+                'info' =>$list,
+                'type' => Yii::$app->params['product_type']
+            ]);
     }
 
 
