@@ -27,9 +27,9 @@ class WebAsset extends AssetBundle
 //        'css/list.css',
     ];
     public $js = [
-        'js/swiper.min.js',
-        'js/jquery-1.11.3.min.js',
-        'js/aos.js'
+//        'js/swiper.min.js',
+//        'js/jquery-1.11.3.min.js',
+//        'js/aos.js'
     ];
     public $depends = [
 //        'yii\web\YiiAsset',

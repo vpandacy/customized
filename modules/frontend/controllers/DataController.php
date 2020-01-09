@@ -66,19 +66,43 @@ class DataController extends BaseController
     }
 
     //产品中心
-    public function actionProducts()
-    {
-        $type = intval($this->get('type', 1));
-        $p = intval($this->get('p', 1));
-        $list = Products::find()
-            ->where(['status' => Products::STATUS_ACTIVE, 'type' => $type])
-            ->asArray()
-            ->all();
+
+    public function actionProducts(){
+        $type = intval($this->get('type',1));
+        $p = intval($this->get('p',1));
+
+
+        $query = Products::find()->where(['status' => Products::STATUS_ACTIVE,'type' => $type]);
+        $offset = ($p - 1) * $this->page_size;
+        $pages = UtilHelper::ipagination([
+            'total_count' => $query->count(),
+            'page_size' => $this->page_size,
+            'page' => $p,
+            'display' => 4
+        ]);
+
+        $list = $query->offset($offset)->limit($this->page_size)->asArray()->all();
+
         return $this->render('products',
             [
-                'info' => $list,
-                'type' => Yii::$app->params['product_type']
+                'list' =>$list,
+                'product_type' => Yii::$app->params['product_type'],
+                'type' =>$type,
+                'pages'=>$pages
             ]);
+    }
+    
+    //项目优势
+    public function actionAdvantage()
+    {
+        $product_advantage = [
+            1=>'品牌魅力',
+            2=>'产品卖点',
+            3=>'加盟优势',
+        ];
+        return $this->render('advantage',[
+            'product_advantage'=>$product_advantage
+        ]);
     }
 
 }

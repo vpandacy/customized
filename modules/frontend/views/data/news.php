@@ -70,7 +70,7 @@ use yii\helpers\Html;
                     </div>
                 </li>
                 <li class="navli">
-                    <a href="product.html">产品中心</a>
+                    <a href="<?=GlobalUrlService::buildAppUrl('/products')?>">产品中心</a>
                     <img src="/images/navbg.png"  alt="" />
                     <div class="downNav clearfix">
                         <ol class="downNav-l fl">
