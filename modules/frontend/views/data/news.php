@@ -151,8 +151,8 @@ use yii\helpers\Html;
             </div>
             <div class="main-l-bd">
                 <ul>
-                    <li class="on"><a href="news.html">品牌新闻</a></li>
-                    <li><a href="newsIndustry.html">行业动态</a></li>
+                    <li class="<?php if ($source == '品牌新闻'):?>on<?php endif;?>"><a href="<?= GlobalUrlService::buildAppUrl('/news', ['source' => '品牌新闻']) ?>">品牌新闻</a></li>
+                    <li class="<?php if ($source == '行业动态'):?>on<?php endif;?>"><a href="<?= GlobalUrlService::buildAppUrl('/news', ['source' => '行业动态']) ?>">行业动态</a></li>
                 </ul>
                 <img class="main-l-ft" src="/images/joinProcessft.png" alt="" />
             </div>
@@ -205,6 +205,7 @@ use yii\helpers\Html;
                     <?php echo \Yii::$app->view->renderFile("@app/modules/frontend/views/common/pagination.php", [
                         'pages' => $pages,
                         'url' => '/news',
+                        'search_conditions'=> $search_conditions
                     ]); ?>
                 </ul>
             </div>
@@ -214,51 +215,8 @@ use yii\helpers\Html;
     </div>
     <!-- 内容结束 -->
 
-    <!-- 底部导航开始 -->
-    <div class="navbg ftNav">
-        <div class="nav wrap">
-            <ul class="nav-ul clearfix">
-                <li class="nav-firstLi navli"><a href="index.html">网站首页</a><img src="/images/navbg.png"  alt="" /></li>
-                <li class="navli"><a href="about.html">关于我们</a><img src="/images/navbg.png"  alt="" /></li>
-                <li class="navli"><a href="trend.html">市场先机</a><img src="/images/navbg.png"  alt="" /></li>
-                <li class="navli"><a href="product.html">产品中心</a><img src="/images/navbg.png"  alt="" /></li>
-                <li class="navli"><a href="advantage.html">项目优势</a><img src="/images/navbg.png"  alt="" /></li>
-                <li class="navli"><a href="joinProcess.html">合作共赢</a><img src="/images/navbg.png"  alt="" /></li>
-                <li class="navli"><a href="news.html">新闻资讯</a><img src="/images/navbg.png"  alt="" /></li>
-                <li class="nav-lastLi navli"><a href="contactUs.html">联系我们</a></li>
-            </ul>
-            <img class="nav-firstLiBg" src="/images/navbg1.png" alt="" />
-        </div>
-    </div>
-    <!-- 底部导航结束 -->
-
     <!-- 底部开始 -->
-    <div class="footerbg">
-        <div class="footer wrap">
-            <div class="footer-hd clearfix">
-                <div class="footer-hd-l fl">
-                    <img src="/images/footer-l.png"  alt="" />
-                    <span>广东缔造者新型材料有限公司</span>
-                </div>
-                <div class="footer-hd-m fl">
-                    <img src="/images/footer-m.png"  alt="" />
-                    <span>佛山市南海区西樵镇联新革新村一队8号厂房</span>
-                </div>
-                <div class="footer-hd-r fr">
-                    <img src="/images/footer-r.png"  alt="" />
-                    <span>0731-81833333</span>
-                </div>
-            </div>
-            <div class="footer-bd clearfix">
-                <img class="footer-logo fl" src="/images/logo.png" height="114" width="100" alt="" />
-                <div class="footer-erweima fl">
-                    <img src="/images/img3.png" alt="" />
-                    <div>公众号二维码</div>
-                </div>
-            </div>
-            <p class="footer-copy">copyright@2020-2021版权所有广东缔造者新型材料有限公司      粤ICP备20010233号-1  /  技术支持： 好商汇</p>
-        </div>
-    </div>
+    <?php echo \Yii::$app->view->renderFile("@app/modules/frontend/views/common/footer.php"); ?>
     <!-- 底部结束 -->
 </body>
 </html>
