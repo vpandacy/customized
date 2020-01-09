@@ -33,14 +33,15 @@ use yii\widgets\ActiveForm;
             'plugins' => ['clips', 'counter', 'definedlinks', 'filemanager', 'fontcolor', 'fontfamily', 'fontsize', 'fullscreen', 'imagemanager', 'limiter', 'table', 'textdirection', 'textexpander',]
         ]
     ]) ?>
-
-    <div class="form-group">
-        <label for="ECalendar_date1" style="width: 100%">选择时间</label>
-        <div class="calendarWarp">
-            <input type="text" name="write_at" class='ECalendar' id="ECalendar_date1" value="<?= $model->write_at?>"
-                   placeholder="开始日期"/>
-        </div>
-    </div>
+    
+    <?= $form->field($model, 'write_at')->widget(DatePicker::classname(), [
+        'options' => ['placeholder' => '选择时间'],
+        'pluginOptions' => [
+            'autoclose' => true,
+            'todayHighlight' => true,
+            'format' => 'yyyy-mm-dd',
+        ]
+    ]); ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>

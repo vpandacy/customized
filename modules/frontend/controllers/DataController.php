@@ -41,8 +41,7 @@ class DataController extends BaseController
     //新闻资讯
     public function actionNews()
     {
-        $news = News::find()
-            ->wh
+//        $news = News::find()
     }
 
 
