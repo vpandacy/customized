@@ -15,6 +15,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <?=Html::cssFile('/css/Ecalendar.css')?>
 <div class="news-create">
 
+    <script src=""></script>
 
     <?= $this->render('_form', [
         'model' => $model,

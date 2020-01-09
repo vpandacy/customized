@@ -30,9 +30,9 @@ $this->params['breadcrumbs'][] = 'Update';
 <?php
 $js = <<<JS
  $(function () {
-        // $("#ECalendar_date1").ECalendar({
-        //     type:'time'
-        // });
+        $("#ECalendar_date1").ECalendar({
+            type:'time'
+        });
         $("#ECalendar_date1").ECalendar({
             type: "time",   //模式，time: 带时间选择; date: 不带时间选择;
             stamp: false,   //是否转成时间戳，默认true;
