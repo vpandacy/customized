@@ -29,9 +29,9 @@ $config = [
         //挑选皮肤
         'assetManager' => [
             'bundles' => [
-                'yii\web\JqueryAsset' => [    //禁用jq
-                    'js' => []
-                ],
+//                'yii\web\JqueryAsset' => [    //禁用jq
+//                    'js' => []
+//                ],
                 'dmstr\web\AdminLteAsset' => [  //adminlte模板静态资源
                     'skin' => 'skin-yellow-light',
                 ],
