@@ -2,7 +2,6 @@
 
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
-
 /* @var $this yii\web\View */
 /* @var $model app\models\Products */
 /* @var $form yii\widgets\ActiveForm */
@@ -14,12 +13,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'type')->dropDownList(
-        [
-            '1' => 'PC',
-            '2' => 'WAP'
-        ]
-    ) ?>
+    <?= $form->field($model, 'type')->dropDownList(Yii::$app->params['product_type']) ?>
 
     <?= $form->field($model, 'image')->widget('manks\FileInput', []);
     ?>

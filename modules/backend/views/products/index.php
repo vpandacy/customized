@@ -17,7 +17,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('添加产品', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
 
-    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+<!--    --><?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
@@ -31,14 +31,16 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'status',
                 'value' => function ($model) {
-                    return $model->status == 10 ? "正常使用" : "已删除";
+                    return $model->status == 10 ? "正常" : "已删除";
                 },
+                'filter' =>[10 =>'正常',0=>'删除']
             ],
             [
                 'attribute' => 'type',
                 'value' => function ($model) {
-                    return $model->type == 1 ? "PC" : "WAP";
+                    return Yii::$app->params['product_type'][$model->type] ??'';
                 },
+                'filter' => Yii::$app->params['product_type']
             ],
             ['class' => 'yii\grid\ActionColumn'],
         ],

@@ -19,7 +19,7 @@ $this->params['breadcrumbs'][] = $this->title;
         <?= Html::a('删除', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
-                'confirm' => 'Are you sure you want to delete this item?',
+                'confirm' => '确定要删除当前产品吗?',
                 'method' => 'post',
             ],
         ]) ?>
@@ -32,15 +32,15 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             'image',
             [
-                'label' => 'status',
+                'attribute' => 'status',
                 'value' => function ($model) {
-                    return $model->status == 10 ? "正常使用" : "已删除";
+                    return $model->status == 10 ? "正常" : "已删除";
                 }
             ],
             [
-                'label' => 'type',
+                'attribute' => 'type',
                 'value' => function ($model) {
-                    return $model->type == 1 ? "PC" : "WAP";
+                    return  Yii::$app->params['product_type'][$model->type] ?? '';
                 }
             ]
         ],

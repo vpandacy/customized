@@ -28,4 +28,11 @@ return [
     ],
     'imageUploadRelativePath' => 'uploads/', // upload图片默认上传的目录
     'imageUploadSuccessPath' => 'uploads/', // upload图片上传成功后，路径前缀
+    'product_type'=>[
+        '1' => '集成墙板',
+        '2' => '艺术背景墙',
+        '3' => '生态地板',
+        '4' => '智能家居',
+        '5' => '装饰线条',
+    ],
 ];
