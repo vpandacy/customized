@@ -1,7 +1,10 @@
 <?php
+use yii\helpers\Html;
 use app\components\GlobalUrlService;
 $type_name = $product_type[$type] ??'';
+
 ?>
+<?=Html::jsFile('/js/main.js')?>
 
 
     <!-- banner开始 -->

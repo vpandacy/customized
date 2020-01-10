@@ -16,7 +16,6 @@ use app\components\GlobalUrlService;
     <?=Html::cssFile('/css/list.css')?>
     <?=Html::jsFile('/js/jquery-1.11.3.min.js')?>
     <?=Html::jsFile('/js/aos.js')?>
-    <?=Html::jsFile('/js/main.js')?>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -123,8 +122,8 @@ use app\components\GlobalUrlService;
                 <img src="images/navbg.png"  alt="" />
                 <div class="downNav clearfix">
                     <ol class="downNav-l fl">
-                        <li><a href="news.html">品牌新闻</a></li>
-                        <li><a href="newsIndustry.html">行业动态</a></li>
+                        <li><a href="<?=GlobalUrlService::buildAppUrl('news',['source'=>'品牌新闻'])?>">品牌新闻</a></li>
+                        <li><a href="<?=GlobalUrlService::buildAppUrl('news',['source'=>'行业动态'])?>">行业动态</a></li>
                     </ol>
                     <div class="downNav-r fr">
                         <img src="images/navigation_img/news.jpg" alt="" />
@@ -151,7 +150,7 @@ use app\components\GlobalUrlService;
             <li class="nav-firstLi navli"><a href="<?= GlobalUrlService::buildAppUrl('/')?>">网站首页</a><img src="/images/navbg.png"  alt="" /></li>
             <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/about')?>">关于我们</a><img src="/images/navbg.png"  alt="" /></li>
             <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/trend')?>">市场先机</a><img src="/images/navbg.png"  alt="" /></li>
-            <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/product')?>">产品中心</a><img src="/images/navbg.png"  alt="" /></li>
+            <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/products')?>">产品中心</a><img src="/images/navbg.png"  alt="" /></li>
             <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/advantage')?>">项目优势</a><img src="/images/navbg.png"  alt="" /></li>
             <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/join-process')?>">合作共赢</a><img src="/images/navbg.png"  alt="" /></li>
             <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/news')?>">新闻资讯</a><img src="/images/navbg.png"  alt="" /></li>

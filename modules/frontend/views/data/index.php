@@ -1,3 +1,6 @@
+<?php
+use app\components\GlobalUrlService;
+?>
  <!-- 轮播图开始 -->
     <div class="banner" aos="fade-up">
         <div class="swiper-container banner-container">
@@ -35,7 +38,7 @@
         <div class="main01-r fr" aos="fade-left">
             <img src="images/main01-r.png"   alt="" />
             <div class="main01-more">
-                <a href="about.html">查看详情</a>
+                <a href="<?=GlobalUrlService::buildAppUrl('/about')?>">查看详情</a>
             </div>
         </div>
     </div>
@@ -49,12 +52,12 @@
         <div class="main03-l fl" aos="fade-up-right">
             <img src="images/product.png"  alt="" />
             <ul class="main03-l-ul">
-                <li><a href="product.html">集成墙板</a></li>
-                <li><a href="product2.html">个性定制画</a></li>
-                <li><a href="product3.html">地板系列</a></li>
-                <li><a href="product4.html">罗马系列</a></li>
-                <li><a href="product5.html">智能家居</a></li>
-                <li><a href="product6.html">艺术窗帘</a></li>
+                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>1])?>">集成墙板</a></li>
+                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>2])?>">个性定制画</a></li>
+                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>3])?>">地板系列</a></li>
+                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>4])?>">罗马系列</a></li>
+                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>5])?>">智能家居</a></li>
+                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>6])?>">艺术窗帘</a></li>
             </ul>
         </div>
         <div class="main03-r fr" aos="fade-up-left">
@@ -242,18 +245,18 @@
                         </a>
                     </li>
                 </ul>
-                <script type="text/javascript">
-                    // 两行文本显示省略号
-                    $(function () {  
-                        $(".main06-item-abstract").each(function (i) {  
-                            var divH = $(this).height();  
-                            var $p = $("p", $(this)).eq(0);  
-                            while ($p.outerHeight() > divH) {  
-                                $p.text($p.text().replace(/(\s)*([a-zA-Z0-9]+|\W)(\.\.\.)?$/, "..."));  
-                            };  
-                        });  
-                    });
-                </script>
+<!--                <script type="text/javascript">-->
+<!--                    // 两行文本显示省略号-->
+<!--                    $(function () {  -->
+<!--                        $(".main06-item-abstract").each(function (i) {  -->
+<!--                            var divH = $(this).height();  -->
+<!--                            var $p = $("p", $(this)).eq(0);  -->
+<!--                            while ($p.outerHeight() > divH) {  -->
+<!--                                $p.text($p.text().replace(/(\s)*([a-zA-Z0-9]+|\W)(\.\.\.)?$/, "..."));  -->
+<!--                            };  -->
+<!--                        });  -->
+<!--                    });-->
+<!--                </script>-->
             </div>
         </div>
     </div>
