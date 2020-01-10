@@ -27,7 +27,7 @@ use yii\helpers\Html;
         <div class="main-r fr">
             <div class="main-r-hd clearfix">
                 <div class="main-r-hd-l fl">
-                    <h3>品牌新闻</h3>
+                    <h3><?php if ($source == "品牌新闻"):?>品牌新闻<?php else:?>行业动态<?php endif;?></h3>
                 </div>
                 <div class="main-r-hd-r fr">
                     <span>您目前所在页面：<a href="/">首页</a> > <a href="/news">新闻资讯</a> > <a href="/news">品牌新闻</a></span>
@@ -82,11 +82,6 @@ use yii\helpers\Html;
     </div>
     <!-- 内容结束 -->
 
-    <!-- 底部开始 -->
-    <?php echo \Yii::$app->view->renderFile("@app/modules/frontend/views/common/footer.php"); ?>
-    <!-- 底部结束 -->
-</body>
-</html>
 <script>
     AOS.init({
         easing: 'ease-out-back',

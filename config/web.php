@@ -82,11 +82,9 @@ $config = [
                 '/w'=>'/wap/wap/index',
                 '/backend' => 'backend/user/index',
                 '/admin' => 'admin/assignment/index',
-
+                '/<action:[a-zA-Z0-9\-_]+>' => '/frontend/data/<action>',
                 '/newscontent/<id:\d+>' => '/frontend/data/newscontent',
-                '/<action:\w+>' => '/frontend/data/<action>',
                 '/w/<action:\w+>' => '/wap/wap/<action>',
-
                 '/backend/<controller:\w+>/<action:\w+>' => '/backend/<controller>/<action>',
 
 

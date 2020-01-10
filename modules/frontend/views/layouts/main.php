@@ -102,14 +102,16 @@ use app\components\GlobalUrlService;
                 </div>
             </li>
             <li class="navli">
-                <a href="<?=GlobalUrlService::buildAppUrl('/joinProcess');?>">合作共赢</a>
+                <a href="<?=GlobalUrlService::buildAppUrl('/join-process');?>">合作共赢</a>
                 <img src="images/navbg.png"  alt="" />
                 <div class="downNav clearfix">
                     <ol class="downNav-l fl">
-                        <li><a href="joinProcess.html">加盟流程</a></li>
-                        <li><a href="coMode.html">合作模式</a></li>
-                        <li><a href="investmentAdv.html">投资优势</a></li>
-                        <li><a href="joinSupport.html">加盟支持</a></li>
+                        <li><a href="<?= GlobalUrlService::buildAppUrl('/join-process',
+                                ['type' => 1]) ?>">加盟流程</a></li>
+                        <li><a href="<?= GlobalUrlService::buildAppUrl('/join-process', ['type' => 2]) ?>">合作模式</a></li>
+                        <li><a href="<?= GlobalUrlService::buildAppUrl('/join-process', ['type' => 3]) ?>">投资优势</a></li>
+                        <li><a href="<?= GlobalUrlService::buildAppUrl('/join-process',
+                                ['type' => 4]) ?>">加盟支持</a></li>
                     </ol>
                     <div class="downNav-r fr">
                         <img src="images/nav2.png" alt="" />
@@ -151,9 +153,9 @@ use app\components\GlobalUrlService;
             <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/trend')?>">市场先机</a><img src="/images/navbg.png"  alt="" /></li>
             <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/product')?>">产品中心</a><img src="/images/navbg.png"  alt="" /></li>
             <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/advantage')?>">项目优势</a><img src="/images/navbg.png"  alt="" /></li>
-            <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/joinProcess')?>">合作共赢</a><img src="/images/navbg.png"  alt="" /></li>
+            <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/join-process')?>">合作共赢</a><img src="/images/navbg.png"  alt="" /></li>
             <li class="navli"><a href="<?= GlobalUrlService::buildAppUrl('/news')?>">新闻资讯</a><img src="/images/navbg.png"  alt="" /></li>
-            <li class="nav-lastLi navli"><a href="<?= GlobalUrlService::buildAppUrl('/contactUs')?>">联系我们</a></li>
+            <li class="nav-lastLi navli"><a href="<?= GlobalUrlService::buildAppUrl('/contact-us')?>">联系我们</a></li>
         </ul>
         <img class="nav-firstLiBg" src="/images/navbg1.png" alt="" />
     </div>

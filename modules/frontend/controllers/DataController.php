@@ -106,4 +106,32 @@ class DataController extends BaseController
         ]);
     }
 
+    public function actionJoinProcess(){
+        $type = $this->get('type',1);
+        switch ($type){
+            case 2:
+                $images = 'coMode';
+                $page_name = '合作模式';
+                break;
+            case 3:
+                $images = 'investmentAdv';
+                $page_name = '投资优势';
+                break;
+            case 4:
+                $images = 'joinSupport';
+                $page_name = '加盟支持';
+                break;
+            default:
+                $images = 'joinProcess';
+                $page_name = '加盟流程';
+                break;
+        }
+
+        return $this->render('join_process',['type'=>$type,'images'=>$images,'page_name'=>$page_name]);
+    }
+
+    public function actionContactUs(){
+        return $this->render('contact_us');
+    }
+
 }
