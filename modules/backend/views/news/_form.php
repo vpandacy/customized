@@ -30,11 +30,14 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'content')->widget(\yii\redactor\widgets\Redactor::className(), [
         'clientOptions' => [
             'minHeight' => '300px',
+            'imageManagerJson' => ['/redactor/upload/image-json'],
+            'imageUpload' => ['/redactor/upload/image'],
+            'fileUpload' => ['/redactor/upload/file'],
             'lang' => 'zh_cn',
-            'plugins' => ['clips', 'counter', 'definedlinks', 'filemanager', 'fontcolor', 'fontfamily', 'fontsize', 'fullscreen', 'imagemanager', 'limiter', 'table', 'textdirection', 'textexpander',]
+            'plugins' => ['clips', 'fontcolor','imagemanager']
         ]
     ]) ?>
-    
+
     <?= $form->field($model, 'write_at')->widget(DatePicker::classname(), [
         'options' => ['placeholder' => '选择时间'],
         'pluginOptions' => [
