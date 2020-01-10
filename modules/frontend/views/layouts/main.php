@@ -14,7 +14,9 @@ use app\components\GlobalUrlService;
     <?=Html::cssFile('/css/swiper.min.css')?>
     <?=Html::cssFile('/css/aos.css')?>
     <?=Html::cssFile('/css/list.css')?>
+    <?=Html::cssFile('/css/index.css')?>
     <?=Html::jsFile('/js/jquery-1.11.3.min.js')?>
+    <?=Html::jsFile('/js/swiper.min.js')?>
     <?=Html::jsFile('/js/aos.js')?>
 </head>
 <body>
