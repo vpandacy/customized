@@ -47,6 +47,14 @@ class ComposerStaticInita435454f2d893131aff80f0b2b9b7b55
             'mdm\\admin\\' => 10,
             'manks\\' => 6,
         ),
+        'k' => 
+        array (
+            'kartik\\plugins\\fileinput\\' => 25,
+            'kartik\\file\\' => 12,
+            'kartik\\datetime\\' => 16,
+            'kartik\\date\\' => 12,
+            'kartik\\base\\' => 12,
+        ),
         'd' => 
         array (
             'dmstr\\' => 6,
@@ -163,6 +171,26 @@ class ComposerStaticInita435454f2d893131aff80f0b2b9b7b55
         'manks\\' => 
         array (
             0 => __DIR__ . '/..' . '/bailangzhan/yii2-webuploader',
+        ),
+        'kartik\\plugins\\fileinput\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/bootstrap-fileinput',
+        ),
+        'kartik\\file\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-fileinput/src',
+        ),
+        'kartik\\datetime\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datetimepicker/src',
+        ),
+        'kartik\\date\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-widget-datepicker/src',
+        ),
+        'kartik\\base\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kartik-v/yii2-krajee-base/src',
         ),
         'dmstr\\' => 
         array (
