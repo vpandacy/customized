@@ -21,7 +21,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'author')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'source')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'source')->dropDownList(['品牌新闻'=>'品牌新闻','行业动态'=>'行业动态'],['prompt'=>'请选择新闻类型']) ?>
 
     <?= $form->field($model, 'keywords')->textInput(['maxlength' => true]) ?>
 

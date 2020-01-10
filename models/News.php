@@ -13,7 +13,7 @@ use Yii;
  * @property string $brief 概述
  * @property string $content 内容
  * @property string $author 作者
- * @property string $source 来源
+ * @property string $source 新闻类型
  * @property string $keywords 关键词
  * @property string $description 描述
  * @property string $created_time
@@ -83,7 +83,7 @@ class News extends \yii\db\ActiveRecord
             'brief' => '概述',
             'content' => '内容',
             'author' => '作者',
-            'source' => '来源',
+            'source' => '新闻类型',
             'keywords' => '关键词',
             'description' => '描述',
             'write_at' => '年份',

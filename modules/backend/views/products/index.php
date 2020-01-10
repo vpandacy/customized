@@ -24,10 +24,21 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
             'name',
-            'image',
+            [
+                    'label'=>'图片',
+                'format'=>[
+                        'image',
+                    [
+                            "width"=>"84",
+                            "height"=>"84"
+                    ]
+                ],
+                'value'=>function($model){
+                return $model->image;
+                }
+
+            ],
             [
                 'attribute' => 'status',
                 'value' => function ($model) {
