@@ -16,23 +16,24 @@ use Yii;
 
 class DataController extends BaseController
 {
-    protected  $type = [
+    protected $type = [
 
     ];
+
     //首页
     public function actionIndex()
     {
         $products = Products::find()
-            ->where([
-                'status' => Products::STATUS_ACTIVE,
-                'type' => 1
-            ])
-            ->limit(20)
-            ->select("*")
+            ->where(['status' => Products::STATUS_ACTIVE,])
+            ->orderBy(['id' => SORT_DESC])
+            ->limit(6)
+            ->asArray()
             ->all();
         $news = News::find()
             ->where(['status' => News::STATUS_USING])
-            ->limit(5)->select("*")
+            ->orderBy(['id' => SORT_DESC])
+            ->limit(4)
+            ->asArray()
             ->all();
         return $this->render('index', ['products' => $products, 'news' => $news]);
     }
@@ -83,17 +84,10 @@ class DataController extends BaseController
         ]);
 
         $list = $query->offset($offset)->limit($this->page_size)->asArray()->all();
-        $product_type = [
-            '1' => '集成墙板',
-            '2' => '艺术背景墙',
-            '3' => '生态地板',
-            '4' => '智能家居',
-            '5' => '装饰线条',
-        ];
         return $this->render('products',
             [
                 'list' => $list,
-                'product_type' => $product_type,
+                'product_type' => Yii::$app->params['product_type'],
                 'type' => $type,
                 'pages' => $pages,
             ]);
@@ -117,19 +111,21 @@ class DataController extends BaseController
     public function actionAbout()
     {
         $type = intval($this->get('type', 1));
-        return $this->render('about'.$type);
+        return $this->render('about' . $type);
     }
 
     //市场先机
-    public function actionTrend(){
-        $type =intval($this->get('type',1));
+    public function actionTrend()
+    {
+        $type = intval($this->get('type', 1));
 
-        return $this->render('trend'.$type);
+        return $this->render('trend' . $type);
     }
 
-    public function actionJoinProcess(){
-        $type = $this->get('type',1);
-        switch ($type){
+    public function actionJoinProcess()
+    {
+        $type = $this->get('type', 1);
+        switch ($type) {
             case 2:
                 $images = 'coMode';
                 $page_name = '合作模式';
@@ -148,11 +144,27 @@ class DataController extends BaseController
                 break;
         }
 
-        return $this->render('join_process',['type'=>$type,'images'=>$images,'page_name'=>$page_name]);
+        return $this->render('join_process', ['type' => $type, 'images' => $images, 'page_name' => $page_name]);
     }
 
-    public function actionContactUs(){
+    //联系我们
+    public function actionContactUs()
+    {
         return $this->render('contact_us');
+    }
+
+    //新闻详情页
+    public function actionDetails()
+    {
+        $id =intval($this->get('id',0));
+        $info = News::find()
+            ->where(['status' => News::STATUS_USING,'id'=>$id])
+            ->asArray()
+            ->one();
+
+        return $this->render('details',[
+            'info' =>$info
+        ]);
     }
 
 

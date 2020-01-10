@@ -37,7 +37,7 @@ use yii\helpers\Html;
                 <ul class="news-list-ul">
                     <?php foreach ($list as $item): ?>
                     <li>
-                        <a href="<?= GlobalUrlService::buildAppUrl('/detail', ['id' => $item['id']]) ?>"
+                        <a href="<?= GlobalUrlService::buildAppUrl('/details', ['id' => $item['id']]) ?>"
                            class="news-list clearfix">
                             <img class="news-list-l fl" src="<?= $item['image'] ?>" alt=""/>
                             <span class="news-list-r fr">

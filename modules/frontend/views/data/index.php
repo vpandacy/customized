@@ -84,12 +84,15 @@ use app\components\GlobalUrlService;
             <div class="banner3">
                 <div class="swiper-container banner3-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="/images/banner3.png" alt="" /></div>
-                        <div class="swiper-slide"><img src="/images/banner3.png" alt="" /></div>
-                        <div class="swiper-slide"><img src="/images/banner3.png" alt="" /></div>
-                        <div class="swiper-slide"><img src="/images/banner3.png" alt="" /></div>
-                        <div class="swiper-slide"><img src="/images/banner3.png" alt="" /></div>
-                        <div class="swiper-slide"><img src="/images/banner3.png" alt="" /></div>
+
+                        <?php if ($products):?>
+                        <?php foreach ($products as $key=> $item):?>
+                            <?php if ($key >=0 && $key<6):?>
+                                <div class="swiper-slide"><img src="<?=$item['image']?>" alt="" /></div>
+                                <?php endif;?>
+                        <?php endforeach;?>
+                        <?php endif;?>
+
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination banner3-pagination"></div>
@@ -197,68 +200,46 @@ use app\components\GlobalUrlService;
         <img class="main06-hd" src="/images/news.png" alt="" />
         <div class="main06-bd clearfix">
             <div class="main06-bd-l fl">
-                <a href="detail.html">
-                    <img src="/images/img1.png" alt="" />
-                    <h3>皇家首府智享云端整装 装修化繁为简</h3>
-                    <p>皇家首府拥有由量房设计师、室内设计师、家具设计师、软装设计师组成的强大设计团队，一对一专属服务，实现全屋整装个性定制！</p>
-                </a>
+                <?php if ($news): ?>
+                    <?php foreach ($news as $key => $item): ?>
+                        <?php if ($key == 0): ?>
+                            <a href="<?= GlobalUrlService::buildAppUrl('/details', ['id' => $item['id']]) ?>">
+                                <img src="<?= $item['image'] ?>" alt=""/>
+                                <h3><?= $item['title'] ?></h3>
+                                <p><?= $item['brief'] ?></p>
+                            </a>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </div>
             <div class="main06-bd-r fr">
                 <ul>
-                    <li>
-                        <a href="detail.html" class="main06-item clearfix">
-                            <img class="main06-item-l fl" src="/images/img2.png" alt="" />
-                            <span class="main06-item-r fr">
-                                <h6>皇家首府智享云端整装 装修化繁为简</h6>
-                                <!-- 两行文本显示省略号 -->
-                                <span class="main06-item-abstract">
-                                    <p>皇家首府拥有由量房设计师、室内设计师、家具设计师、软装设计师组成的强大设计团队</p>
-                                </span>
-                                <span class="main06-item-date">2020-01-03</span>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="main06-item clearfix">
-                            <img class="main06-item-l fl" src="/images/img2.png" alt="" />
-                            <span class="main06-item-r fr">
-                                <h6>皇家首府智享云端整装 装修化繁为简</h6>
-                                <!-- 两行文本显示省略号 -->
-                                <span class="main06-item-abstract">
-                                    <p>皇家首府拥有由量房设计师、室内设计师、家具设计师、软装设计师组成的强大设计团队，一对一专属服务，实现全屋整装个性定制！</p>
-                                </span>
-                                <span class="main06-item-date">2020-01-03</span>
-                            </span>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#" class="main06-item clearfix">
-                            <img class="main06-item-l fl" src="/images/img2.png" alt="" />
-                            <span class="main06-item-r fr">
-                                <h6>皇家首府智享云端整装 装修化繁为简</h6>
-                                <!-- 两行文本显示省略号 -->
-                                <span class="main06-item-abstract">
-                                    <p>皇家首府拥有由量房设计师、室内设计师、家具设计师、软装设计师组成的强大设计团队，一对一专属服务，实现全屋整装个性定制！</p>
-                                </span>
-                                <span class="main06-item-date">2020-01-03</span>
-                            </span>
-                        </a>
-                    </li>
+                    <?php if ($news): ?>
+                        <?php foreach ($news as $key => $item): ?>
+                            <?php if ($key >0 && $key <4): ?>
+                                <li>
+                                    <a href="<?=GlobalUrlService::buildAppUrl('/details',['id'=>$item['id']])?>" class="main06-item clearfix">
+                                        <img class="main06-item-l fl" src="<?=$item['image']?>" alt="" />
+                                        <span class="main06-item-r fr">
+                                <h6><?=$item['title']?></h6>
+                                    </a>
+                                </li>
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
                 </ul>
-
-<!--                <script type="text/javascript">-->
-<!--                    // 两行文本显示省略号-->
-<!--                    $(function () {  -->
-<!--                        $(".main06-item-abstract").each(function (i) {  -->
-<!--                            var divH = $(this).height();  -->
-<!--                            var $p = $("p", $(this)).eq(0);  -->
-<!--                            while ($p.outerHeight() > divH) {  -->
-<!--                                $p.text($p.text().replace(/(\s)*([a-zA-Z0-9]+|\W)(\.\.\.)?$/, "..."));  -->
-<!--                            };  -->
-<!--                        });  -->
-<!--                    });-->
-<!--                </script>-->
-
+                <script type="text/javascript">
+                    // 两行文本显示省略号
+                    $(function () {
+                        $(".main06-item-abstract").each(function (i) {
+                            var divH = $(this).height();
+                            var $p = $("p", $(this)).eq(0);
+                            while ($p.outerHeight() > divH) {
+                                $p.text($p.text().replace(/(\s)*([a-zA-Z0-9]+|\W)(\.\.\.)?$/, "..."));
+                            };
+                        });
+                    });
+                </script>
             </div>
         </div>
     </div>
