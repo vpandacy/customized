@@ -10,6 +10,7 @@ namespace app\modules\frontend\controllers;
 
 use app\components\UtilHelper;
 use app\components\ValidateHelper;
+use app\models\Lybook;
 use app\models\News;
 use app\models\Products;
 use app\modules\frontend\controllers\common\BaseController;
@@ -157,7 +158,7 @@ class DataController extends BaseController
     {
         if (Yii::$app->request->isPost){
             $name = trim($this->post('name',''));
-            $mobile = intval($this->post('moble',''));
+            $mobile = intval($this->post('mobile',''));
             $email = trim($this->post('email',''));
             $content=$this->post('content','');
 
@@ -176,9 +177,20 @@ class DataController extends BaseController
                 return $this->renderErrJSON("请输入合法的邮箱~~");
             }
             //验证内容
-            if(!ValidateHelper::validIsEmpty($content)){
+            if(ValidateHelper::validIsEmpty($content)){
                 return $this->renderErrJSON("留言内容不能为空~~");
             }
+
+            $tmp_lybook =new Lybook();
+            $tmp_lybook->name = $name;
+            $tmp_lybook->mobile = $mobile;
+            $tmp_lybook->email = $email;
+            $tmp_lybook->content =$content;
+            $tmp_lybook->status = 10;
+            $tmp_lybook->created_time=date('Y-m-d H:i:s');
+            $tmp_lybook->updated_time=date('Y-m-d H:i:s');
+
+            return $tmp_lybook->save(0) ?$this->renderJSON() :$this->renderErrJSON();
 
 
         }

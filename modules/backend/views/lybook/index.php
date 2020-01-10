@@ -1,0 +1,36 @@
+<?php
+
+use yii\helpers\Html;
+use yii\grid\GridView;
+
+/* @var $this yii\web\View */
+/* @var $searchModel app\models\LybookSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = '留言管理';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="lybook-index">
+
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            'name',
+            'mobile',
+            'email:email',
+            ['attribute' => 'content', 'value' => 'begining'],
+            ['attribute' => 'searchTime', 'value' => 'created_time', 'label' => '评论时间',
+                'format' => ['date', 'php:Y-m-d H:i']],
+            //'status',
+            //'created_time',
+            //'updated_time',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+
+
+</div>
