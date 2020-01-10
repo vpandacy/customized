@@ -111,7 +111,11 @@ class DataController extends BaseController
     public function actionAbout()
     {
         $type = intval($this->get('type', 1));
+        if ($type < 0 || $type > 3) {
+            $type = 1;
+        }
         return $this->render('about' . $type);
+
     }
 
     //市场先机

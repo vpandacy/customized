@@ -18,7 +18,6 @@ use app\components\GlobalUrlService;
                     <li><a href="<?=GlobalUrlService::buildAppUrl('/about',['type'=>1]);?>">公司简介</a></li>
                     <li><a href="<?=GlobalUrlService::buildAppUrl('/about',['type'=>2]);?>">企业文化</a></li>
                     <li class="on"><a href="<?=GlobalUrlService::buildAppUrl('/about',['type'=>3]);?>">现代工厂</a></li>
-                    <li><a href="<?=GlobalUrlService::buildAppUrl('/about',['type'=>4]);?>">荣誉资质</a></li>
                 </ul>
                 <img class="main-l-ft" src="images/aboutft.png" alt="" />
             </div>

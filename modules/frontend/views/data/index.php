@@ -17,6 +17,7 @@ use app\components\GlobalUrlService;
                 loop: true,
                 pagination: {
                     el: '.banner-pagination',
+                    clickable: true
                 },
             });
         </script>
@@ -53,11 +54,11 @@ use app\components\GlobalUrlService;
             <img src="/images/product.png"  alt="" />
             <ul class="main03-l-ul">
                 <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>1])?>">集成墙板</a></li>
-                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>2])?>">个性定制画</a></li>
-                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>3])?>">地板系列</a></li>
-                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>4])?>">罗马系列</a></li>
-                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>5])?>">智能家居</a></li>
-                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>6])?>">艺术窗帘</a></li>
+                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>2])?>">艺术背景墙</a></li>
+                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>3])?>">生态地板</a></li>
+                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>4])?>">智能家居</a></li>
+                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>5])?>">集成吊饰</a></li>
+                <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>6])?>">装饰线条</a></li>
             </ul>
         </div>
         <div class="main03-r fr" aos="fade-up-left">
@@ -65,9 +66,14 @@ use app\components\GlobalUrlService;
             <div class="banner2">
                 <div class="swiper-container banner2-container">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide"><img src="/images/banner2.png" alt="" /></div>
-                        <div class="swiper-slide"><img src="/images/banner2.png" alt="" /></div>
-                        <div class="swiper-slide"><img src="/images/banner2.png" alt="" /></div>
+                        <?php if ($products):?>
+                            <?php foreach ($products as $key=> $item):?>
+                                <?php if ($key >=0 && $key<3):?>
+                                    <div class="swiper-slide"><img src="<?=$item['image']?>" alt="" /></div>
+                                <?php endif;?>
+                            <?php endforeach;?>
+                        <?php endif;?>
+
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination banner2-pagination"></div>
@@ -87,7 +93,7 @@ use app\components\GlobalUrlService;
 
                         <?php if ($products):?>
                         <?php foreach ($products as $key=> $item):?>
-                            <?php if ($key >=0 && $key<6):?>
+                            <?php if ($key >=3 && $key<9):?>
                                 <div class="swiper-slide"><img src="<?=$item['image']?>" alt="" /></div>
                                 <?php endif;?>
                         <?php endforeach;?>
@@ -150,6 +156,7 @@ use app\components\GlobalUrlService;
                         loop: true,
                         pagination: {
                             el: '.banner4-pagination',
+                            clickable: true,
                         },
                         navigation: {
                             nextEl: '.banner4-button-next',
