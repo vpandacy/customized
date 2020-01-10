@@ -1,6 +1,4 @@
-
-<?php $this->beginContent('@app/modules/frontend/views/layouts/main.php'); ?>
-    <!-- 轮播图开始 -->
+ <!-- 轮播图开始 -->
     <div class="banner" aos="fade-up">
         <div class="swiper-container banner-container">
             <div class="swiper-wrapper">
@@ -264,5 +262,3 @@
     <!-- 内容7开始 -->
     <a href="contactUs.html"><div class="main07" aos="zoom-in"></div></a>
     <!-- 内容7结束 -->
-
-<?php $this->endContent(); ?>

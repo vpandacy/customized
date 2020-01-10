@@ -16,8 +16,6 @@ use Yii;
 
 class DataController extends BaseController
 {
-    public $layout = false;
-
     //首页
     public function actionIndex()
     {
@@ -100,8 +98,11 @@ class DataController extends BaseController
             2=>'产品卖点',
             3=>'加盟优势',
         ];
+
+        $advan_type = intval($this->get('type',1));
         return $this->render('advantage',[
-            'product_advantage'=>$product_advantage
+            'product_advantage'=>$product_advantage,
+            'advan_type' =>$advan_type
         ]);
     }
 
