@@ -116,7 +116,7 @@ $config = [
         ],
         //富文本框模块
         'redactor' => [
-            'class' => 'app\components\RedactorModule',
+            'class' => 'yii\redactor\RedactorModule',
             'uploadDir' => 'uploads',
             'uploadUrl' => '/uploads',
             'imageAllowExtensions' => ['jpg', 'png', 'gif']
