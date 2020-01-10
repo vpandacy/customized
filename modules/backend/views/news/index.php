@@ -29,7 +29,20 @@ $this->params['breadcrumbs'][] = $this->title;
 
             'id',
             'title',
-            'image',
+            [
+                'label'=>'图片',
+                'format'=>[
+                    'image',
+                    [
+                        "width"=>"84",
+                        "height"=>"84"
+                    ]
+                ],
+                'value'=>function($model){
+                    return $model->image;
+                }
+
+            ],
 //            'brief',
 //            'content:ntext',
             'author',
@@ -42,27 +55,26 @@ $this->params['breadcrumbs'][] = $this->title;
 //            'status',
 
             ['class' => 'yii\grid\ActionColumn',
-                'template' => '{using}',
-                'header' => '操作',
+//                'template' => '{view}{update}{resetpwd}{privilege}',
+                'template' => '{view}{update}{using}{delete}',
                 'buttons' => [
                     'using' => function ($url, $model, $key) {
                         if ($model->status == 10) {
-                            return Html::a('开启使用', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 5]), [
-                                'title' => '栏目信息',
+                            return Html::a('<span class="glyphicon glyphicon-play"></span>', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 5]), [
+                                'title' => '开始启用',
                                 'class' => 'btn-view',
                                 'method' => 'get'
                             ]);
                         } else {
-                            return Html::a('停止使用', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 10]), [
-                                'title' => '栏目信息',
+                            return Html::a('<span class="glyphicon glyphicon-pause"></span>', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 10]), [
+                                'title' => '停止使用',
                                 'class' => 'btn-view',
                                 'method' => 'get'
                             ]);
                         }
                     },
-                ]
+                ],
             ],
-            ['class' => 'yii\grid\ActionColumn']
         ],
     ]); ?>
 
