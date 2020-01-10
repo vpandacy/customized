@@ -53,7 +53,7 @@ use app\components\GlobalUrlService;
                         <li><a href="<?=GlobalUrlService::buildAppUrl('/about',['type'=>4]);?>">荣誉资质</a></li>
                     </ol>
                     <div class="downNav-r fr">
-                        <img src="images/nav2.png" alt="" />
+                        <img src="images/navigation_img/about.jpg" alt="" />
                     </div>
                 </div>
             </li>
@@ -66,7 +66,7 @@ use app\components\GlobalUrlService;
                         <li><a href="<?=GlobalUrlService::buildAppUrl('/trend',['type'=>2]);?>">市场前景</a></li>
                     </ol>
                     <div class="downNav-r fr">
-                        <img src="images/nav2.png" alt="" />
+                        <img src="images/navigation_img/trend.jpg" alt="" />
                     </div>
                 </div>
             </li>
@@ -83,7 +83,7 @@ use app\components\GlobalUrlService;
                         <li><a href="<?=GlobalUrlService::buildAppUrl('/products',['type'=>6]);?>">装饰线条</a></li>
                     </ol>
                     <div class="downNav-r fr">
-                        <img src="images/nav2.png" alt="" />
+                        <img src="images/navigation_img/products.jpg" alt="" />
                     </div>
                 </div>
             </li>
@@ -97,7 +97,7 @@ use app\components\GlobalUrlService;
                         <li><a href="<?=GlobalUrlService::buildAppUrl('/advantage',['type'=>3]);?>">加盟优势</a></li>
                     </ol>
                     <div class="downNav-r fr">
-                        <img src="images/nav2.png" alt="" />
+                        <img src="images/navigation_img/advantage.jpg" alt="" />
                     </div>
                 </div>
             </li>
@@ -114,7 +114,7 @@ use app\components\GlobalUrlService;
                                 ['type' => 4]) ?>">加盟支持</a></li>
                     </ol>
                     <div class="downNav-r fr">
-                        <img src="images/nav2.png" alt="" />
+                        <img src="images/navigation_img/join-process.jpg" alt="" />
                     </div>
                 </div>
             </li>
@@ -127,7 +127,7 @@ use app\components\GlobalUrlService;
                         <li><a href="newsIndustry.html">行业动态</a></li>
                     </ol>
                     <div class="downNav-r fr">
-                        <img src="images/nav2.png" alt="" />
+                        <img src="images/navigation_img/news.jpg" alt="" />
                     </div>
                 </div>
             </li>

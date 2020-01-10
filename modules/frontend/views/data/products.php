@@ -1,7 +1,6 @@
 <?php
-use yii\helpers\Html;
 use app\components\GlobalUrlService;
-$type_name = Yii::$app->params['product_type'][$type] ??'';
+$type_name = $product_type[$type] ??'';
 ?>
 
 

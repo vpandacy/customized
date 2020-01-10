@@ -16,6 +16,9 @@ use Yii;
 
 class DataController extends BaseController
 {
+    protected  $type = [
+
+    ];
     //首页
     public function actionIndex()
     {
@@ -70,7 +73,6 @@ class DataController extends BaseController
         $type = intval($this->get('type', 1));
         $p = intval($this->get('p', 1));
 
-
         $query = Products::find()->where(['status' => Products::STATUS_ACTIVE, 'type' => $type]);
         $offset = ($p - 1) * $this->page_size;
         $pages = UtilHelper::ipagination([
@@ -81,13 +83,19 @@ class DataController extends BaseController
         ]);
 
         $list = $query->offset($offset)->limit($this->page_size)->asArray()->all();
-
+        $product_type = [
+            '1' => '集成墙板',
+            '2' => '艺术背景墙',
+            '3' => '生态地板',
+            '4' => '智能家居',
+            '5' => '装饰线条',
+        ];
         return $this->render('products',
             [
                 'list' => $list,
-                'product_type' => Yii::$app->params['product_type'],
+                'product_type' => $product_type,
                 'type' => $type,
-                'pages' => $pages
+                'pages' => $pages,
             ]);
     }
 
@@ -96,7 +104,12 @@ class DataController extends BaseController
     {
 
         $type = intval($this->get('type', 1));
-        return $this->render('advantage'.$type);
+        $advantage_type = [
+            1 => ['name' => '品牌魅力', 'image' => 'advantageR'],
+            2 => ['name' => '产品卖点', 'image' => 'sellingPoint'],
+            3 => ['name' => '加盟优势', 'image' => 'joinAdv'],
+        ];
+        return $this->render('advantage', ['type' => $type, 'advantage_type' => $advantage_type]);
     }
 
 
@@ -104,26 +117,14 @@ class DataController extends BaseController
     public function actionAbout()
     {
         $type = intval($this->get('type', 1));
-        $about_type = [
-            1=>'公司简介',
-            2=>'企业文化',
-            3=>'现代工厂',
-            4=>'荣誉资质',
-
-        ];
-        return $this->render('about'.$type, [
-            'type' => $type,
-            'about_type' =>$about_type
-        ]);
+        return $this->render('about'.$type);
     }
 
     //市场先机
     public function actionTrend(){
         $type =intval($this->get('type',1));
 
-        return $this->render('trend'.$type,[
-           'type' =>$type,
-        ]);
+        return $this->render('trend'.$type);
     }
 
     public function actionJoinProcess(){
