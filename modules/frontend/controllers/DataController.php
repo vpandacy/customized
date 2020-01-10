@@ -9,6 +9,7 @@
 namespace app\modules\frontend\controllers;
 
 use app\components\UtilHelper;
+use app\components\ValidateHelper;
 use app\models\News;
 use app\models\Products;
 use app\modules\frontend\controllers\common\BaseController;
@@ -154,6 +155,33 @@ class DataController extends BaseController
     //联系我们
     public function actionContactUs()
     {
+        if (Yii::$app->request->isPost){
+            $name = trim($this->post('name',''));
+            $mobile = intval($this->post('moble',''));
+            $email = trim($this->post('email',''));
+            $content=$this->post('content','');
+
+            //验证
+            //验证员工姓名
+            if(!ValidateHelper::validLength($name,2,10)){
+                return $this->renderErrJSON("姓名不能小于2个字或者大于10个字~~");
+            }
+
+            //验证手机号码
+            if(!ValidateHelper::validPhone($mobile)){
+                return $this->renderErrJSON("请输入合法的手机号码~~");
+            }
+            //验证邮箱
+            if(!ValidateHelper::validEmail($email)){
+                return $this->renderErrJSON("请输入合法的邮箱~~");
+            }
+            //验证内容
+            if(!ValidateHelper::validIsEmpty($content)){
+                return $this->renderErrJSON("留言内容不能为空~~");
+            }
+
+
+        }
         return $this->render('contact_us');
     }
 

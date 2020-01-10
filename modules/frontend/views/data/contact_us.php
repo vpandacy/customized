@@ -1,8 +1,9 @@
 <?php
-
+use yii\helpers\Html;
 use app\components\GlobalUrlService;
-
 ?>
+<?=Html::jsFile('/js/lybook/index.js');?>
+
 <!-- banner开始 -->
 <div class="banner">
     <img src="/images/contactUs-banner.png" alt=""/>
@@ -44,22 +45,23 @@ use app\components\GlobalUrlService;
         </div>
         <div class="main-r-bd">
             <h3 class="lxwm-r-title">留言板</h3>
-            <form action="">
+            <form id="lybook-from" method="post">
                 <div class="lxwm-r-hd">
                     <span class="lxwm-r-item">姓名:</span>
-                    <input class="lxwm-r-input" type="text"/>
+                    <input class="lxwm-r-input" name="name" type="text"/>
 
                     <span class="lxwm-r-item">电话:</span>
-                    <input class="lxwm-r-input" type="text"/>
+                    <input class="lxwm-r-input" name="mobile" type="text"/>
 
                     <span class="lxwm-r-item">邮箱:</span>
-                    <input class="lxwm-r-input" type="text"/>
+                    <input class="lxwm-r-input" name="email" type="text"/>
                 </div>
                 <div class="lxwm-r-bd">
                     <span class="lxwm-r-item fl">内容:</span>
-                    <textarea class="lxwm-r-textarea" name="" id="" cols="30" rows="10"></textarea>
+                    <textarea class="lxwm-r-textarea" name="content" id="" cols="30" rows="10"></textarea>
                 </div>
-                <button class="lxwm-btn">提交</button>
+                <input name="_csrf" type="hidden" id="_csrf" value="<?= Yii::$app->request->csrfToken ?>">
+                <div class="lxwm-btn" style="text-align:center">提交</div>
             </form>
             <img src="/images/lxwmft.png" height="51" width="877" alt=""/>
         </div>
@@ -67,10 +69,3 @@ use app\components\GlobalUrlService;
 
     </div>
 </div>
-<!-- 内容结束 -->
-<script>
-    AOS.init({
-        easing: 'ease-out-back',
-        duration: 1000
-    });
-</script> 
