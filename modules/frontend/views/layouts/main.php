@@ -47,10 +47,10 @@ use app\components\GlobalUrlService;
                 <img src="images/navbg.png"  alt="" />
                 <div class="downNav clearfix">
                     <ol class="downNav-l fl">
-                        <li><a href="about.html">公司简介</a></li>
-                        <li><a href="culture.html">企业文化</a></li>
-                        <li><a href="factory.html">现代工厂</a></li>
-                        <li><a href="honor.html">荣誉资质</a></li>
+                        <li><a href="<?=GlobalUrlService::buildAppUrl('/about',['type'=>1]);?>">公司简介</a></li>
+                        <li><a href="<?=GlobalUrlService::buildAppUrl('/about',['type'=>2]);?>">企业文化</a></li>
+                        <li><a href="<?=GlobalUrlService::buildAppUrl('/about',['type'=>3]);?>">现代工厂</a></li>
+                        <li><a href="<?=GlobalUrlService::buildAppUrl('/about',['type'=>4]);?>">荣誉资质</a></li>
                     </ol>
                     <div class="downNav-r fr">
                         <img src="images/nav2.png" alt="" />
@@ -62,8 +62,8 @@ use app\components\GlobalUrlService;
                 <img src="images/navbg.png"  alt="" />
                 <div class="downNav clearfix">
                     <ol class="downNav-l fl">
-                        <li><a href="trend.html">市场趋势</a></li>
-                        <li><a href="prospect.html">市场前景</a></li>
+                        <li><a href="<?=GlobalUrlService::buildAppUrl('/trend',['type'=>1]);?>">市场趋势</a></li>
+                        <li><a href="<?=GlobalUrlService::buildAppUrl('/trend',['type'=>2]);?>">市场前景</a></li>
                     </ol>
                     <div class="downNav-r fr">
                         <img src="images/nav2.png" alt="" />

@@ -65,12 +65,13 @@ class DataController extends BaseController
 
     //产品中心
 
-    public function actionProducts(){
-        $type = intval($this->get('type',1));
-        $p = intval($this->get('p',1));
+    public function actionProducts()
+    {
+        $type = intval($this->get('type', 1));
+        $p = intval($this->get('p', 1));
 
 
-        $query = Products::find()->where(['status' => Products::STATUS_ACTIVE,'type' => $type]);
+        $query = Products::find()->where(['status' => Products::STATUS_ACTIVE, 'type' => $type]);
         $offset = ($p - 1) * $this->page_size;
         $pages = UtilHelper::ipagination([
             'total_count' => $query->count(),
@@ -83,26 +84,45 @@ class DataController extends BaseController
 
         return $this->render('products',
             [
-                'list' =>$list,
+                'list' => $list,
                 'product_type' => Yii::$app->params['product_type'],
-                'type' =>$type,
-                'pages'=>$pages
+                'type' => $type,
+                'pages' => $pages
             ]);
     }
-    
+
     //项目优势
     public function actionAdvantage()
     {
-        $product_advantage = [
-            1=>'品牌魅力',
-            2=>'产品卖点',
-            3=>'加盟优势',
-        ];
 
-        $advan_type = intval($this->get('type',1));
-        return $this->render('advantage',[
-            'product_advantage'=>$product_advantage,
-            'advan_type' =>$advan_type
+        $type = intval($this->get('type', 1));
+        return $this->render('advantage'.$type);
+    }
+
+
+    //关于我们
+    public function actionAbout()
+    {
+        $type = intval($this->get('type', 1));
+        $about_type = [
+            1=>'公司简介',
+            2=>'企业文化',
+            3=>'现代工厂',
+            4=>'荣誉资质',
+
+        ];
+        return $this->render('about'.$type, [
+            'type' => $type,
+            'about_type' =>$about_type
+        ]);
+    }
+
+    //市场先机
+    public function actionTrend(){
+        $type =intval($this->get('type',1));
+
+        return $this->render('trend'.$type,[
+           'type' =>$type,
         ]);
     }
 
@@ -133,5 +153,6 @@ class DataController extends BaseController
     public function actionContactUs(){
         return $this->render('contact_us');
     }
+
 
 }
