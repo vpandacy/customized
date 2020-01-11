@@ -17,7 +17,7 @@ class LybookSearch extends Lybook
     public function rules()
     {
         return [
-            [['id', 'status'], 'integer'],
+            [['id', 'is_read','status'], 'integer'],
             [['name', 'mobile', 'email', 'content', 'created_time', 'updated_time'], 'safe'],
         ];
     }
@@ -60,6 +60,7 @@ class LybookSearch extends Lybook
         $query->andFilterWhere([
             'id' => $this->id,
             'status' => 10,
+            'is_read' => $this->is_read,
             'created_time' => $this->created_time,
             'updated_time' => $this->updated_time,
         ]);
@@ -67,7 +68,9 @@ class LybookSearch extends Lybook
         $query->andFilterWhere(['like', 'name', $this->name])
             ->andFilterWhere(['like', 'mobile', $this->mobile])
             ->andFilterWhere(['like', 'email', $this->email])
+            ->andFilterWhere(['like', 'is_read', $this->is_read])
             ->andFilterWhere(['like', 'content', $this->content]);
+
 
         return $dataProvider;
     }

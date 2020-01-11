@@ -25,8 +25,6 @@ $this->params['breadcrumbs'][] = $this->title;
         'dataProvider' => $dataProvider,
         'filterModel' => $searchModel,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
-
             'id',
             'title',
             [
@@ -52,7 +50,13 @@ $this->params['breadcrumbs'][] = $this->title;
             //'description',
             //'created_time',
             //'updated_time',
-//            'status',
+            [
+                'attribute' => 'status',
+                'value' => function ($model) {
+                    return ($model->status == 10) ? '启用' : '停用';
+                },
+                'filter' =>[10=>'启用',5=>'停用']
+            ],
 
             ['class' => 'yii\grid\ActionColumn',
 //                'template' => '{view}{update}{resetpwd}{privilege}',
@@ -60,14 +64,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'buttons' => [
                     'using' => function ($url, $model, $key) {
                         if ($model->status == 10) {
-                            return Html::a('<span class="glyphicon glyphicon-play"></span>', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 5]), [
-                                'title' => '开始启用',
+                            return Html::a('<span class="glyphicon glyphicon-pause"></span>', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 5]), [
+                                'title' => '停止使用',
                                 'class' => 'btn-view',
                                 'method' => 'get'
                             ]);
                         } else {
-                            return Html::a('<span class="glyphicon glyphicon-pause"></span>', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 10]), [
-                                'title' => '停止使用',
+                            return Html::a('<span class="glyphicon glyphicon-play"></span>', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 10]), [
+                                'title' => '开始启用',
                                 'class' => 'btn-view',
                                 'method' => 'get'
                             ]);

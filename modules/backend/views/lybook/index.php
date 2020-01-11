@@ -22,13 +22,21 @@ $this->params['breadcrumbs'][] = $this->title;
             'mobile',
             'email:email',
             ['attribute' => 'content', 'value' => 'begining'],
-            ['attribute' => 'searchTime', 'value' => 'created_time', 'label' => '评论时间',
+            ['attribute' => 'searchTime', 'value' => 'created_time', 'label' => '留言时间',
                 'format' => ['date', 'php:Y-m-d H:i']],
+            [
+                    'attribute' => 'is_read',
+                    'value' =>function($model){
+                        return $model->is_read ?'已读':'未读';
+                    },
+                'filter'=>[0=>'未读',1=>'已读']
+                ],
             //'status',
             //'created_time',
             //'updated_time',
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+                'template' => '{view}{delete}',],
         ],
     ]); ?>
 

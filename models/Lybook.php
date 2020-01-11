@@ -12,6 +12,7 @@ use Yii;
  * @property string $mobile 手机号
  * @property string $email 邮箱
  * @property string $content 留言内容
+ * @property int $is_read 0已读1未读
  * @property int $status 状态0删除10整除
  * @property string $created_time 创建时间
  * @property string $updated_time 修改时间
@@ -32,7 +33,7 @@ class Lybook extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['status'], 'integer'],
+            [['is_read', 'status'], 'integer'],
             [['created_time', 'updated_time'], 'required'],
             [['created_time', 'updated_time'], 'safe'],
             [['name'], 'string', 'max' => 42],
@@ -49,12 +50,13 @@ class Lybook extends \yii\db\ActiveRecord
         return [
             'id' => 'ID',
             'name' => '姓名',
-            'mobile' => '手机',
+            'mobile' => '手机号',
             'email' => '邮箱',
             'content' => '内容',
+            'is_read' => '是否已读',
             'status' => '状态',
-            'created_time' => 'Created Time',
-            'updated_time' => 'Updated Time',
+            'created_time' => '录入时间',
+            'updated_time' => '更新时间',
         ];
     }
 

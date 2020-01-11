@@ -6,7 +6,7 @@ use yii\grid\GridView;
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
 
-$this->title = 'Users';
+$this->title = '用户管理';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <?=Html::jsFile('/js/jquery.js')?>
@@ -20,15 +20,16 @@ $this->params['breadcrumbs'][] = $this->title;
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
         'columns' => [
-            ['class' => 'yii\grid\SerialColumn'],
+//            ['class' => 'yii\grid\SerialColumn'],
 
-//            'id',
+            'id',
             'username',
 //            'auth_key',
 //            'password_hash',
             'created_at',
             'updated_at',
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+                'template' => '{view}{delete}',],
         ],
     ]); ?>
 

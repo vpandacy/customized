@@ -14,6 +14,9 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="lybook-view">
 
     <p>
+        <?php if (!$model->is_read):?>
+        <?= Html::a('确认已读', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+        <?php endif;?>
         <?= Html::a('删除', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
             'data' => [
