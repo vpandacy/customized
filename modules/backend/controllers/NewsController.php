@@ -78,9 +78,7 @@ class NewsController extends Controller
                 return $this->redirect(['view', 'id' => $model->id]);
             }
         }
-        return $this->render('create', [
-            'model' => $model,
-        ]);
+        return $this->redirect(['index']);
     }
 
     /**

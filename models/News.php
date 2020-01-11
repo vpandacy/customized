@@ -90,7 +90,7 @@ class News extends \yii\db\ActiveRecord
             'write_at' => '年份',
             'created_at' => '创建时间',
             'updated_at' => '更新时间',
-            'status' => 'Status',
+            'status' => '状态',
         ];
     }
 
