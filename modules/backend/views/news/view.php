@@ -31,7 +31,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'attributes' => [
             'id',
             'title',
-            'image',
+            [
+                    'attribute' =>'image',
+                'format' =>'raw',
+                'value' =>$model->getImage()
+            ],
             'brief',
             'content:ntext',
             'author',

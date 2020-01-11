@@ -14,6 +14,8 @@ use yii\filters\VerbFilter;
  */
 class LybookController extends Controller
 {
+    const STATUS_DELETED = 0;
+    const STATUS_ACTIVE = 10;
     /**
      * {@inheritdoc}
      */
@@ -105,7 +107,7 @@ class LybookController extends Controller
     public function actionDelete($id)
     {
         $query = $this->findModel($id);
-        $query->status=5;
+        $query->status=self::STATUS_DELETED;
         $query->updated_time = date('Y-m-d H:i:s');
         $query->save(0);
 

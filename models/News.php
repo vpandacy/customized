@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\Html;
 
 /**
  * This is the model class for table "news".
@@ -107,5 +108,9 @@ class News extends \yii\db\ActiveRecord
         }
     }
 
+    public function getImage(){
+        $this->image = Html::img($this->image);
+        return $this->image;
+    }
 
 }

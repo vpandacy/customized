@@ -12,7 +12,7 @@ use Yii;
  * @property string $mobile 手机号
  * @property string $email 邮箱
  * @property string $content 留言内容
- * @property int $status 状态5删除10整除
+ * @property int $status 状态0删除10整除
  * @property string $created_time 创建时间
  * @property string $updated_time 修改时间
  */

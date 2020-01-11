@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model app\models\Products */
 
-$this->title = '产品' . $model->name;
+$this->title = '产品名称:' . $model->name;
 $this->params['breadcrumbs'][] = ['label' => 'Products', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
@@ -25,25 +25,29 @@ $this->params['breadcrumbs'][] = $this->title;
         ]) ?>
     </p>
 
-    <?= DetailView::widget([
-        'model' => $model,
-        'attributes' => [
-            'id',
-            'name',
-            'image',
-            [
-                'attribute' => 'status',
-                'value' => function ($model) {
-                    return $model->status == 10 ? "正常" : "已删除";
-                }
-            ],
-            [
-                'attribute' => 'type',
-                'value' => function ($model) {
-                    return  Yii::$app->params['product_type'][$model->type] ?? '';
-                }
-            ]
-        ],
-    ]) ?>
+            <?= DetailView::widget([
+                'model' => $model,
+                'attributes' => [
+                    'name',
+                    [
+                            'attribute' => 'image',
+                        'format' =>'raw',
+                        'value' =>$model->getImage()
+                    ],
+                    [
+                        'attribute' => 'status',
+                        'value' => function ($model) {
+                            return $model->status == 10 ? "正常" : "已删除";
+                        }
+                    ],
+                    [
+                        'attribute' => 'type',
+                        'value' => function ($model) {
+                            return  Yii::$app->params['product_type'][$model->type] ?? '';
+                        }
+                    ]
+                ],
+            ]) ?>
+
 
 </div>

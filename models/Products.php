@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\Html;
 
 /**
  * This is the model class for table "products".
@@ -56,5 +57,10 @@ class Products extends \yii\db\ActiveRecord
             'status' => '状态',
             'type'=>'类型'
         ];
+    }
+
+    public function getImage(){
+        $this->image = Html::img($this->image);
+        return $this->image;
     }
 }

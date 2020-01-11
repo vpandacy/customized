@@ -180,7 +180,6 @@ class DataController extends BaseController
             if(ValidateHelper::validIsEmpty($content)){
                 return $this->renderErrJSON("留言内容不能为空~~");
             }
-
             $tmp_lybook =new Lybook();
             $tmp_lybook->name = $name;
             $tmp_lybook->mobile = $mobile;
