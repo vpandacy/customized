@@ -15,7 +15,7 @@ if ($pages): ?>
     <?php endif; ?>
     <?php for ($page = $pages['from']; $page <= $pages['end']; $page++): ?>
         <?php if ($page == $pages['current']): ?>
-            <li class="active"><a href="<?= GlobalUrlService::buildNullUrl(); ?>"><?= $page; ?></a></li>
+            <li class="on"><a href="<?= GlobalUrlService::buildNullUrl(); ?>"><?= $page; ?></a></li>
         <?php else: ?>
             <li><a href="<?= GlobalUrlService::buildAppUrl($url,
                     array_merge($search_conditions,['p' => $page])); ?>"><?= $page; ?></a></li>

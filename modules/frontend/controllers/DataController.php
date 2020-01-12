@@ -46,7 +46,7 @@ class DataController extends BaseController
         $p = $this->get('p', 1);
         $source = $this->get('source', "品牌新闻");
         $query = News::find()->select("*")
-            ->where(['source' => "品牌新闻"])
+            ->where(['source' => $source])
             ->andWhere(['status' => News::STATUS_USING]);
         $offset = ($p - 1) * $this->page_size;
         $pages = UtilHelper::ipagination([
