@@ -35,7 +35,7 @@ class RedactorModule extends \yii\base\Module
 
     public function getOwnerPath()
     {
-        return 'image';
+        return date('Ymd');
         // return Yii::$app->user->isGuest ? 'guest' : Yii::$app->user->id;
     }
 
