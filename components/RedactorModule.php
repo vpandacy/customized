@@ -20,7 +20,7 @@ use yii\helpers\Url;
 class RedactorModule extends \yii\base\Module
 {
     public $controllerNamespace = 'yii\redactor\controllers';
-    public $defaultRoute = '/uploads';
+    public $defaultRoute = 'uploads';
     public $uploadDir = '@webroot/uploads';
     public $uploadUrl = '@web/uploads';
     public $imageUploadRoute = ['/redactor/upload/image'];
