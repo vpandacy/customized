@@ -2,6 +2,7 @@
 
 use kartik\date\DatePicker;
 use yii\helpers\Html;
+use yii\redactor\widgets\Redactor;
 use yii\widgets\ActiveForm;
 
 ?>
@@ -27,7 +28,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'content')->widget(\yii\redactor\widgets\Redactor::className(), [
+    <?= $form->field($model, 'content')->widget(Redactor::className(), [
         'clientOptions' => [
             'minHeight' => '300px',
             'imageManagerJson' => ['/redactor/upload/image-json'],

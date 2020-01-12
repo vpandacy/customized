@@ -20,7 +20,7 @@ use yii\helpers\Url;
 class RedactorModule extends \yii\base\Module
 {
     public $controllerNamespace = 'yii\redactor\controllers';
-    public $defaultRoute = 'upload';
+    public $defaultRoute = '/uploads';
     public $uploadDir = '@webroot/uploads';
     public $uploadUrl = '@web/uploads';
     public $imageUploadRoute = ['/redactor/upload/image'];
@@ -35,7 +35,7 @@ class RedactorModule extends \yii\base\Module
 
     public function getOwnerPath()
     {
-        return date('Ymd');
+        return 'image';
         // return Yii::$app->user->isGuest ? 'guest' : Yii::$app->user->id;
     }
 
@@ -59,6 +59,7 @@ class RedactorModule extends \yii\base\Module
      * @param $fileName
      * @return string
      * @throws InvalidConfigException
+     * @throws \yii\base\Exception
      */
     public function getFilePath($fileName)
     {
