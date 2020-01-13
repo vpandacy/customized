@@ -28,7 +28,7 @@ class DataController extends BaseController
         $products = Products::find()
             ->where(['status' => Products::STATUS_ACTIVE,])
             ->orderBy(['id' => SORT_DESC])
-            ->limit(6)
+            ->limit(9)
             ->asArray()
             ->all();
         $news = News::find()

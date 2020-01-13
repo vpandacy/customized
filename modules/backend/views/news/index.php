@@ -53,9 +53,9 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'status',
                 'value' => function ($model) {
-                    return ($model->status == 10) ? '启用' : '停用';
+                    return ($model->status == 5) ? '停用' : '启用';
                 },
-                'filter' =>[10=>'启用',5=>'停用']
+                'filter' =>[10=>'停用',5=>'启用']
             ],
 
             ['class' => 'yii\grid\ActionColumn',
@@ -63,14 +63,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 'template' => '{view}{update}{using}{delete}',
                 'buttons' => [
                     'using' => function ($url, $model, $key) {
-                        if ($model->status == 10) {
-                            return Html::a('<span class="glyphicon glyphicon-pause"></span>', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 5]), [
+                        if ($model->status == 5) {
+                            return Html::a('<span class="glyphicon glyphicon-pause"></span>', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 10]), [
                                 'title' => '停止使用',
                                 'class' => 'btn-view',
                                 'method' => 'get'
                             ]);
                         } else {
-                            return Html::a('<span class="glyphicon glyphicon-play"></span>', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 10]), [
+                            return Html::a('<span class="glyphicon glyphicon-play"></span>', Url::toRoute(['news/using', 'id' => $model->id, 'status' => 5]), [
                                 'title' => '开始启用',
                                 'class' => 'btn-view',
                                 'method' => 'get'

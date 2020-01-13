@@ -26,12 +26,20 @@ $this->params['breadcrumbs'][] = $this->title;
             ['attribute' => 'searchTime', 'value' => 'created_time', 'label' => '留言时间',
                 'format' => ['date', 'php:Y-m-d H:i']],
             [
-                    'attribute' => 'is_read',
-                    'value' =>function($model){
-                        return $model->is_read ?'已读':'未读';
-                    },
-                'filter'=>[0=>'未读',1=>'已读']
+                'attribute' => 'is_read',
+                'value' => function ($model) {
+                    return $model->is_read ? '已读' : '未读';
+                },
+                'filter' => [0 => '未读', 1 => '已读'],
+                'filterInputOptions' => [
+                    'prompt' => '请选择状态',
+                    'class' => 'form-control',
+                    'id' => null,
                 ],
+                'contentOptions' => function ($model) {
+                    return ($model->status == 1) ? ['class' => 'bg-danger'] : [];
+                },
+            ],
             //'status',
             //'created_time',
             //'updated_time',

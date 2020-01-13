@@ -1,4 +1,5 @@
 <?php
+use yii\helpers\Html;
 use app\components\GlobalUrlService;
 ?>
  <!-- 轮播图开始 -->
@@ -69,7 +70,7 @@ use app\components\GlobalUrlService;
                         <?php if ($products):?>
                             <?php foreach ($products as $key=> $item):?>
                                 <?php if ($key >=0 && $key<3):?>
-                                    <div class="swiper-slide"><img src="<?=$item['image']?>" alt="" /></div>
+                                    <div class="swiper-slide" style="width: 880px;"><img src="<?=$item['image']?>" alt="" /></div>
                                 <?php endif;?>
                             <?php endforeach;?>
                         <?php endif;?>
@@ -94,7 +95,7 @@ use app\components\GlobalUrlService;
                         <?php if ($products):?>
                         <?php foreach ($products as $key=> $item):?>
                             <?php if ($key >=3 && $key<9):?>
-                                <div class="swiper-slide"><img src="<?=$item['image']?>" alt="" /></div>
+                                <div class="swiper-slide" style="width: 212.5px;margin-right: 10px"><img src="<?=$item['image']?>" alt="" /></div>
                                 <?php endif;?>
                         <?php endforeach;?>
                         <?php endif;?>
@@ -142,8 +143,12 @@ use app\components\GlobalUrlService;
                 <div class="swiper-container banner4-container">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide"><img src="/images/banner4.png" alt="" /><span class="banner4-title">客厅</span></div>
-                        <div class="swiper-slide"><img src="/images/banner4.png" alt="" /><span class="banner4-title">餐厅</span></div>
-                        <div class="swiper-slide"><img src="/images/banner4.png" alt="" /><span class="banner4-title">卧室</span></div>
+                        <div class="swiper-slide"><img src="/images/bedroom.jpg" alt="" /><span class="banner4-title">卧室</span></div>
+                        <div class="swiper-slide"><img src="/images/kitchen.jpg" alt="" /><span class="banner4-title">厨房</span></div>
+                        <div class="swiper-slide"><img src="/images/bathroom.jpg" alt="" /><span class="banner4-title">浴室</span></div>
+                        <div class="swiper-slide"><img src="/images/restaurant.jpg" alt="" /><span class="banner4-title">餐厅</span></div>
+                        <div class="swiper-slide"><img src="/images/hotel.jpg" alt="" /><span class="banner4-title">酒店</span></div>
+                        <div class="swiper-slide"><img src="/images/club.jpg" alt="" /><span class="banner4-title">会所</span></div>
                     </div>
                     <!-- Add Pagination -->
                     <div class="swiper-pagination banner4-pagination"></div>
@@ -212,7 +217,7 @@ use app\components\GlobalUrlService;
                         <?php if ($key == 0): ?>
                             <a href="<?= GlobalUrlService::buildAppUrl('/details', ['id' => $item['id']]) ?>">
                                 <img src="<?= $item['image'] ?>" alt=""/>
-                                <h3><?= $item['title'] ?></h3>
+                                <h3><?= Html::encode($item['title']) ?></h3>
                                 <p><?= $item['brief'] ?></p>
                             </a>
                         <?php endif; ?>
@@ -226,9 +231,10 @@ use app\components\GlobalUrlService;
                             <?php if ($key >0 && $key <4): ?>
                                 <li>
                                     <a href="<?=GlobalUrlService::buildAppUrl('/details',['id'=>$item['id']])?>" class="main06-item clearfix">
-                                        <img class="main06-item-l fl" src="<?=$item['image']?>" alt="" />
+                                        <img class="main06-item-l fl" src="<?=$item['image']?>" alt="" style="width:160px;height: 120px " />
                                         <span class="main06-item-r fr">
-                                <h6><?=$item['title']?></h6>
+                                <h6><?=Html::encode($item['title']);?></h6>
+                                            <h7><?=Html::encode($item['write_at']);?></h7>
                                     </a>
                                 </li>
                             <?php endif; ?>

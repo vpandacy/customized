@@ -48,7 +48,7 @@ use yii\widgets\ActiveForm;
         ],
     ]); ?>
 
-    <?= $form->field($model, 'status')->radioList([10=>'启用',5=>'停用']) ?>
+    <?= $form->field($model, 'status')->radioList([5=>'启用',10=>'停用']) ?>
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
