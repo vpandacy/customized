@@ -40,17 +40,20 @@ var contact_us_ops = {
             }
 
             var data =$("#lybook-from").serialize();
+            btn_target.addClass("disabled");
             $.ajax({
                 type:'POST',
                 url:'/contact-us',
                 data:data,
-                success:function (res) {
-                    if (res.code == 200){
-                        alert('提交成功');
-                        window.location.href=window.location.href;
-                    }else{
-                        alert('提交失败');
+                success: function (res) {
+                    btn_target.removeClass("disabled");
+                    var callback = {};
+                    if (res.code == 200) {
+                        callback = function () {
+                            window.location.href = window.location.href;
+                        };
                     }
+                    alert(res.msg);
                 }
             });
 

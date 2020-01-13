@@ -230,11 +230,13 @@ use app\components\GlobalUrlService;
                         <?php foreach ($news as $key => $item): ?>
                             <?php if ($key >0 && $key <4): ?>
                                 <li>
-                                    <a href="<?=GlobalUrlService::buildAppUrl('/details',['id'=>$item['id']])?>" class="main06-item clearfix">
-                                        <img class="main06-item-l fl" src="<?=$item['image']?>" alt="" style="width:160px;height: 120px " />
+                                    <a href="<?= GlobalUrlService::buildAppUrl('/details', ['id' => $item['id']]) ?>"
+                                       class="main06-item clearfix">
+                                        <img class="main06-item-l fl" src="<?= $item['image'] ?>" alt=""
+                                             style="width:160px;height: 120px "/>
                                         <span class="main06-item-r fr">
-                                <h6><?=Html::encode($item['title']);?></h6>
-                                            <h7><?=Html::encode($item['write_at']);?></h7>
+                                <h6><?= Html::encode($item['title']); ?></h6>
+                                            <h7><?= Html::encode($item['write_at']); ?></h7>
                                     </a>
                                 </li>
                             <?php endif; ?>
@@ -259,5 +261,5 @@ use app\components\GlobalUrlService;
     <!-- 内容6结束 -->
 
     <!-- 内容7开始 -->
-    <a href="contactUs.html"><div class="main07" aos="zoom-in"></div></a>
+    <a href="/contact-us"><div class="main07" aos="zoom-in"></div></a>
     <!-- 内容7结束 -->
