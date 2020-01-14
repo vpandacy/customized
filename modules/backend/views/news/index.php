@@ -53,9 +53,14 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'status',
                 'value' => function ($model) {
-                    return ($model->status == 5) ? '停用' : '启用';
+                    return ($model->status == 5) ? '已启用' : '已停用';
                 },
-                'filter' =>[10=>'停用',5=>'启用']
+                'filter' =>[5=>'已启用',10=>'已停用'],
+                'filterInputOptions' => [
+                    'prompt' => '请选择状态',
+                    'class' => 'form-control',
+                    'id' => null,
+                ],
             ],
 
             ['class' => 'yii\grid\ActionColumn',

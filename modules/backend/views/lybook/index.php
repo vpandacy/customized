@@ -37,7 +37,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     'id' => null,
                 ],
                 'contentOptions' => function ($model) {
-                    return ($model->status == 1) ? ['class' => 'bg-danger'] : [];
+                    return ($model->is_read == 0) ? ['class' => 'bg-danger'] : [];
                 },
             ],
             //'status',

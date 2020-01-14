@@ -6,9 +6,9 @@ use app\components\GlobalUrlService;
     <div class="banner" aos="fade-up">
         <div class="swiper-container banner-container">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="/images/banner.png" alt="" /></div>
-                <div class="swiper-slide"><img src="/images/banner.png" alt="" /></div>
-                <div class="swiper-slide"><img src="/images/banner.png" alt="" /></div>
+                <div class="swiper-slide" style="width: 1920px;height: 740px"><img src="/images/banner.png" alt="" /></div>
+                <div class="swiper-slide" style="width: 1920px;height: 740px"><img src="/images/banner2.jpg" alt="" /></div>
+                <div class="swiper-slide" style="width: 1920px;height: 740px"><img src="/images/banner3.jpg" alt="" /></div>
             </div>
             <!-- Add Pagination -->
             <div class="swiper-pagination banner-pagination"></div>
