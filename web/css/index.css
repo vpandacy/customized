@@ -4,7 +4,10 @@
 .banner .swiper-pagination-bullet-active{
     background: #fff;
 }
-
+.banner .swiper-slide img {
+    width: 100%;
+    height: auto;
+}
 
 /*内容1开始*/
 .main01{
@@ -144,12 +147,20 @@
     margin-bottom: 16px;
     margin-top: 16px;
 }
+.banner2 .swiper-slide img {
+    width: 880px;
+    height: 500px;
+}
 .banner2 .swiper-pagination-bullet-active{
     background: #fff;
 }
 .banner3{
     width: 880px;
     position: relative;
+}
+.banner3 .swiper-slide img {
+    width: 217px;
+    height: 175px;
 }
 .banner3 .swiper-pagination-bullet-active{
     background: #fff;
@@ -263,6 +274,10 @@
     margin: 0 auto;
     position: relative;
 }
+.banner4 .swiper-slide img {
+    width: 1200px;
+    height: 646px;
+}
 .banner4 .swiper-pagination-bullet-active{
     background: #fff;
 }
@@ -313,6 +328,10 @@
     margin: 0 auto;
     padding-top: 200px;
     position: relative;
+}
+.banner5 .swiper-slide img {
+    width: 388px;
+    height: 253px;
 }
 .banner5 .swiper-button-prev{
     width: 18px;
@@ -387,6 +406,8 @@
 }
 .main06-item-l{
     transition: all 0.6s;
+    width: 156px;
+    height: 118px;
 }
 .main06-item-l:hover{
     transform: scale(1.1);

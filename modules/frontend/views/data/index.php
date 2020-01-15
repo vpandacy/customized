@@ -16,6 +16,10 @@ use app\components\GlobalUrlService;
         <script>
             var swiper = new Swiper('.banner-container', {
                 loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
                 pagination: {
                     el: '.banner-pagination',
                     clickable: true
@@ -66,11 +70,11 @@ use app\components\GlobalUrlService;
             <h3><span>引入先进工艺技术</span>   打造高端定制典范</h3>
             <div class="banner2">
                 <div class="swiper-container banner2-container">
-                    <div class="swiper-wrapper">
-                        <?php if ($products):?>
+
+                        <?php if ($products):?> <div class="swiper-wrapper">
                             <?php foreach ($products as $key=> $item):?>
                                 <?php if ($key >=0 && $key<3):?>
-                                    <div class="swiper-slide" style="width: 880px;"><img src="<?=$item['image']?>" alt="" /></div>
+                                    <div class="swiper-slide"><img src="<?=$item['image']?>" alt="" /></div>
                                 <?php endif;?>
                             <?php endforeach;?>
                         <?php endif;?>
@@ -82,6 +86,10 @@ use app\components\GlobalUrlService;
                 <script>
                     var swiper = new Swiper('.banner2-container', {
                         loop: true,
+                        autoplay: {
+                            delay: 4000,
+                            disableOnInteraction: false,
+                        },
                         pagination: {
                             el: '.banner2-pagination',
                         },
@@ -95,7 +103,7 @@ use app\components\GlobalUrlService;
                         <?php if ($products):?>
                         <?php foreach ($products as $key=> $item):?>
                             <?php if ($key >=3 && $key<9):?>
-                                <div class="swiper-slide" style="width: 212.5px;margin-right: 10px"><img src="<?=$item['image']?>" alt="" /></div>
+                                <div class="swiper-slide"><img src="<?=$item['image']?>" alt="" /></div>
                                 <?php endif;?>
                         <?php endforeach;?>
                         <?php endif;?>
@@ -110,6 +118,10 @@ use app\components\GlobalUrlService;
                         spaceBetween: 10,
                         freeMode: true,
                         loop: true,
+                        autoplay: {
+                            delay: 4000,
+                            disableOnInteraction: false,
+                        },
                         pagination: {
                         el: '.banner3-pagination',
                             clickable: true,
@@ -159,6 +171,10 @@ use app\components\GlobalUrlService;
                 <script>
                     var swiper = new Swiper('.banner4-container', {
                         loop: true,
+                        autoplay: {
+                            delay: 4000,
+                            disableOnInteraction: false,
+                        },
                         pagination: {
                             el: '.banner4-pagination',
                             clickable: true,
@@ -193,6 +209,10 @@ use app\components\GlobalUrlService;
                     spaceBetween: 10,
                     freeMode: true,
                     loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
                     pagination: {
                     el: '.banner3-pagination',
                         clickable: true,
